@@ -820,195 +820,28 @@
   "posts": [
     {
       "liked": false,
-      "text": "Laboris dolore aliquip ipsum nostrud quis culpa excepteur cillum labore ad excepteur sit.",
-      "picture": "img/sample_images/2.jpeg",
+      "text": "รักษามะเร็งเต้านม โดยไม่ตัดเต้าทิ้ง",
+      "picture": "http://www.phyathai.com/FileUpload/SmallImage/Thumbnail_29_02_2016_11_19_38.jpg",
       "date": 1429935138465,
       "id": 0,
-      "userId": 5
-    },
-    {
-      "liked": true,
-      "text": "Laborum dolore proident minim esse id est et labore aliquip.",
-      "picture": "img/sample_images/3.jpeg",
-      "date": 1431899904735,
-      "id": 1,
-      "userId": 8
-    },
-    {
-      "liked": true,
-      "text": "Exercitation minim commodo id ea labore excepteur quis laboris.",
-      "picture": "img/sample_images/2.jpeg",
-      "date": 1432186116161,
-      "id": 2,
-      "userId": 4
-    },
-    {
-      "liked": false,
-      "text": "Dolore adipisicing minim magna aliqua aliquip qui minim elit.",
-      "picture": "img/sample_images/2.jpeg",
-      "date": 1436764441096,
-      "id": 3,
-      "userId": 1
-    },
-    {
-      "liked": false,
-      "text": "Non ad amet eiusmod aute eiusmod sint reprehenderit duis consectetur labore eu proident exercitation eiusmod.",
-      "picture": "img/sample_images/2.jpeg",
-      "date": 1433493539467,
-      "id": 4,
-      "userId": 9
-    },
-    {
-      "liked": true,
-      "text": "Duis ullamco tempor incididunt aute est.",
-      "picture": "img/sample_images/7.jpeg",
-      "date": 1436240676401,
-      "id": 5,
-      "userId": 4
-    },
-    {
-      "liked": false,
-      "text": "Ad nisi sunt irure sit aliquip aliqua dolor ullamco aliquip excepteur anim.",
-      "picture": "img/sample_images/6.jpeg",
-      "date": 1435779475898,
-      "id": 6,
-      "userId": 6
-    },
-    {
-      "liked": true,
-      "text": "Nisi dolore dolore ea nulla.",
-      "picture": "img/sample_images/1.jpeg",
-      "date": 1432907411972,
-      "id": 7,
-      "userId": 8
-    },
-    {
-      "liked": true,
-      "text": "Ullamco deserunt dolore est irure et commodo nostrud consectetur minim.",
-      "picture": "img/sample_images/6.jpeg",
-      "date": 1433820295758,
-      "id": 8,
-      "userId": 6
-    },
-    {
-      "liked": true,
-      "text": "Et laborum commodo dolore Lorem.",
-      "picture": "img/sample_images/2.jpeg",
-      "date": 1435166274846,
-      "id": 9,
-      "userId": 8
-    },
-    {
-      "liked": true,
-      "text": "Mollit qui officia in quis.",
-      "picture": "img/sample_images/8.jpeg",
-      "date": 1434028484430,
-      "id": 10,
-      "userId": 5
-    },
-    {
-      "liked": false,
-      "text": "Irure occaecat veniam ipsum exercitation officia.",
-      "picture": "img/sample_images/6.jpeg",
-      "date": 1430952015246,
-      "id": 11,
-      "userId": 3
-    },
-    {
-      "liked": true,
-      "text": "Ut deserunt qui aliqua veniam sint.",
-      "picture": "img/sample_images/6.jpeg",
-      "date": 1434667160801,
-      "id": 12,
-      "userId": 0
-    },
-    {
-      "liked": true,
-      "text": "Consectetur magna incididunt excepteur exercitation Lorem sunt commodo minim consectetur.",
-      "picture": "img/sample_images/1.jpeg",
-      "date": 1431160864064,
-      "id": 13,
-      "userId": 2
-    },
-    {
-      "liked": false,
-      "text": "Proident pariatur sit dolore irure sit est ad nostrud et proident eu officia.",
-      "picture": "img/sample_images/8.jpeg",
-      "date": 1431136477366,
-      "id": 14,
-      "userId": 5
-    },
-    {
-      "liked": true,
-      "text": "Lorem amet amet consequat dolore laboris eiusmod qui irure enim eiusmod amet incididunt.",
-      "picture": "img/sample_images/4.jpeg",
-      "date": 1433456207340,
-      "id": 15,
-      "userId": 6
-    },
-    {
-      "liked": true,
-      "text": "Nostrud dolore adipisicing consectetur nulla adipisicing incididunt deserunt.",
-      "picture": "img/sample_images/8.jpeg",
-      "date": 1436472553696,
-      "id": 16,
-      "userId": 6
-    },
-    {
-      "liked": true,
-      "text": "Sit aute ea enim consequat ex deserunt sit veniam cupidatat eu sint eiusmod ipsum.",
-      "picture": "img/sample_images/2.jpeg",
-      "date": 1430206511464,
-      "id": 17,
-      "userId": 0
-    },
-    {
-      "liked": false,
-      "text": "Consectetur ipsum deserunt et culpa ea qui elit exercitation fugiat non culpa nisi cupidatat in.",
-      "picture": "img/sample_images/5.jpeg",
-      "date": 1432783072907,
-      "id": 18,
-      "userId": 7
-    },
-    {
-      "liked": false,
-      "text": "Ut dolore nostrud occaecat nostrud nisi non dolore ea do adipisicing consequat.",
-      "picture": "img/sample_images/9.jpeg",
-      "date": 1435898998544,
-      "id": 19,
-      "userId": 6
-    },
-    {
-      "liked": false,
-      "text": "Id voluptate mollit velit nulla.",
-      "picture": "img/sample_images/3.jpeg",
-      "date": 1431151576013,
-      "id": 20,
-      "userId": 2
-    },
-    {
-      "liked": true,
-      "text": "Tempor reprehenderit anim labore elit fugiat id consectetur culpa ut dolor cupidatat.",
-      "picture": "img/sample_images/4.jpeg",
-      "date": 1435721700169,
-      "id": 21,
-      "userId": 1
-    },
-    {
-      "liked": false,
-      "text": "Eu ex officia enim veniam non cillum labore cillum Lorem deserunt adipisicing.",
-      "picture": "img/sample_images/2.jpeg",
-      "date": 1433807612242,
-      "id": 22,
-      "userId": 0
-    },
-    {
-      "liked": false,
-      "text": "Anim est sunt mollit ea aute tempor sunt adipisicing occaecat ad.",
-      "picture": "img/sample_images/6.jpeg",
-      "date": 1435132969929,
-      "id": 23,
-      "userId": 6
+      "userId": 5,
+      "feed_feel": [{
+        "id": 1,
+        "feed_id": 0,
+        "feel" : 1,
+        "userId" : 8
+        },{
+        "id": 2,
+        "feed_id": 0,
+        "feel" : 1,
+        "userId" : 4
+        }],
+        "feed_comment" : [{
+        "id": 1,
+        "feed_id": 0,
+        "text": "test test",
+        "userId" : 8
+        }]
     }
   ],
   "users": [
