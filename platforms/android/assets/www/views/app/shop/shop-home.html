@@ -1,8 +1,8 @@
-<ion-view view-title="Shop" class="shop-home-view ">
+<ion-view view-title="Package" class="shop-home-view ">
     <ion-content scroll="false">
         <ion-scroll direction="y" style="height:100%;">
             <ion-slide-box auto-play="true" does-continue="true" show-pager="false" slide-interval="4000" on-slide-changed="slideChanged(index)">
-                <ion-slide ng-repeat="product in popular_products">
+                <ion-slide ng-repeat="product in show_products">
                     <div class="row slide-content">
                         <div class="col col-center user-data">
                             <img class="img-shop" ng-src="img/sale.png" />
@@ -17,7 +17,7 @@
             <ion-slide-box show-pager="false">
                 <ion-slide>
                     <div class="row shop-products-narrow-cards-outer style-webkit-box">
-                        <div class="col col-42-new shop-product-narrow-card " ng-repeat="product in popular_products" style="padding-left: 0px;" ui-sref="app.product-detail({productId: related_product._id})">
+                        <div class="col col-42-new shop-product-narrow-card " ng-repeat="product in show_products | orderBy : 'create_date' | filter:{ type: '1' } | limitTo: 0-6 " style="padding-left: 0px;" ui-sref="app.product-detail({productId: product._id})">
                             <div class="list card style-width-157px">
                                 <div class="item item-image">
                                     <pre-img ratio="_1_1" helper-class="main-image">
@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="item item-body">
                                     <h2 class="card-title">{{product.title}}</h2>
-                                    <p class="card-description"><b>${{product.price}}</b></p>
+                                    <p class="card-description"><b>฿ {{product.product_prices[0].price}}</b></p>
                                 </div>
                             </div>
                         </div>
@@ -36,7 +36,7 @@
                 </ion-slide>
             </ion-slide-box>
             <ion-slide-box show-pager="false" on-slide-changed="slideChanged(index)">
-                <ion-slide ng-repeat="product in popular_products">
+                <ion-slide ng-repeat="product in show_products">
                     <div class="row slide-content">
                         <div class="col col-center user-data">
                             <img class="img-shop img-hospital" ng-src="img/sale.png" / >
@@ -51,7 +51,7 @@
             <ion-slide-box show-pager="false">
                 <ion-slide>
                     <div class="row shop-products-narrow-cards-outer style-webkit-box">
-                        <div class="col col-42-new shop-product-narrow-card " ng-repeat="product in popular_products" style="padding-left: 0px;" ui-sref="app.product-detail({productId: related_product._id})">
+                        <div class="col col-42-new shop-product-narrow-card "  ng-repeat="product in show_products | orderBy : create_date | filter:{ type: '1' } | limitTo: 0-6 " style="padding-left: 0px;" ui-sref="app.product-detail({productId: product._id})">
                             <div class="list card style-width-157px">
                                 <div class="item item-image">
                                     <pre-img ratio="_1_1" helper-class="main-image">
@@ -60,7 +60,7 @@
                                 </div>
                                 <div class="item item-body">
                                     <h2 class="card-title">{{product.title}}</h2>
-                                    <p class="card-description"><b>${{product.price}}</b></p>
+                                    <p class="card-description"><b>฿ {{product.product_prices[0].price}}</b></p>
                                 </div>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
             <ion-slide-box show-pager="false">
                 <ion-slide>
                     <div class="row shop-products-narrow-cards-outer style-webkit-box">
-                        <div class="col col-42-new shop-product-narrow-card " ng-repeat="product in popular_products" style="padding-left: 0px;" ui-sref="app.product-detail({productId: related_product._id})">
+                        <div class="col col-42-new shop-product-narrow-card " ng-repeat="product in show_products | orderBy : 'product_prices[0].price' | filter:{ type: '1' } | limitTo: 0-6 " style="padding-left: 0px;" ui-sref="app.product-detail({productId: product._id})">
                             <div class="list card style-width-157px">
                                 <div class="item item-image">
                                     <pre-img ratio="_1_1" helper-class="main-image">
@@ -85,7 +85,7 @@
                                 </div>
                                 <div class="item item-body">
                                     <h2 class="card-title">{{product.title}}</h2>
-                                    <p class="card-description"><b>${{product.price}}</b></p>
+                                    <p class="card-description"><b>฿ {{product.product_prices[0].price}}</b></p>
                                 </div>
                             </div>
                         </div>
