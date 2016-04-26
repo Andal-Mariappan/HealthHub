@@ -767,6 +767,27 @@
         "name": "Lowe Fox",
         "picture": "img/sample_images/people/5.jpeg",
         "_id": 9
-    }]
+    }],
+    "hospital":[{
+        "id" : 1,
+        "name" : "โรงพยาบาลกรุงเทพ",
+        "img_hospital" : "img/hospital/hospital1.jpg"
+        },{
+        "id" : 2,
+        "name" : "โรงพยาบาลสมิติเวช",
+        "img_hospital" : "img/hospital/hospital2.jpg"
+        },{
+        "id" : 3,
+        "name" : "โรงพยาบาลเวชธานี",
+        "img_hospital" : "img/hospital/hospital3.jpg"
+        },{
+        "id" : 4,
+        "name" : "โรงพยาบาลบํารุงราษฎร์",
+        "img_hospital" : "img/hospital/hospital4.jpg"
+        },{
+        "id" : 5,
+        "name" : "โรงพยาบาลพญาไท",
+        "img_hospital" : "img/hospital/hospital5.jpg"
+        }]        
 
 }

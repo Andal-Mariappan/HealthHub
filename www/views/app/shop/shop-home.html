@@ -2,10 +2,10 @@
     <ion-content scroll="false">
         <ion-scroll direction="y" style="height:100%;">
             <ion-slide-box auto-play="true" does-continue="true" show-pager="false" slide-interval="4000" on-slide-changed="slideChanged(index)">
-                <ion-slide ng-repeat="product in show_products">
+                <ion-slide ng-repeat="hospital in hospital">
                     <div class="row slide-content">
                         <div class="col col-center user-data">
-                            <img class="img-shop" ng-src="img/sale.png" />
+                            <img class="img-shop" ng-src="{{hospital.img_hospital}}" />
                         </div>
                     </div>
                 </ion-slide>
@@ -36,10 +36,10 @@
                 </ion-slide>
             </ion-slide-box>
             <ion-slide-box show-pager="false" on-slide-changed="slideChanged(index)">
-                <ion-slide ng-repeat="product in show_products">
+                <ion-slide ng-repeat="hospital in hospital">
                     <div class="row slide-content">
                         <div class="col col-center user-data">
-                            <img class="img-shop img-hospital" ng-src="img/sale.png" / >
+                            <img class="img-shop img-hospital" ng-src="{{hospital.img_hospital}}" / >
                         </div>
                     </div>
                 </ion-slide>

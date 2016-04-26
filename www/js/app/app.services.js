@@ -111,6 +111,14 @@ angular.module('your_app_name.app.services', [])
 
 .service('ShopService', function ($http, $q, _){
 
+  this.getHospital = function(){
+    var dfd = $q.defer();
+    $http.get('database.json').success(function(database) {
+      dfd.resolve(database.hospital);
+    });
+    return dfd.promise;
+  };
+
   this.getProducts = function(){
     var dfd = $q.defer();
     $http.get('database.json').success(function(database) {

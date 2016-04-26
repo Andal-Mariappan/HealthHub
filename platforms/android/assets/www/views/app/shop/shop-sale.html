@@ -1,19 +1,99 @@
 <ion-view view-title="Other" class="shop-sale-view">
-  <ion-content>
-    <div class="row shop-products-narrow-cards-outer">
-      <div ng-repeat="product in products" class="col col-50 shop-product-narrow-card" ui-sref="app.product-detail({productId: product._id})">
-        <div class="list card">
-          <div class="item item-image">
-            <pre-img ratio="_1_1" helper-class="main-image">
-              <img ng-src="{{product.picture}}" spinner-on-load>
-            </pre-img>
-          </div>
-          <div class="item item-body">
-            <h2 class="card-title">{{product.title}}</h2>
-            <p class="card-description"><b>${{product.price}}</b> - {{product.description}}</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </ion-content>
+    <ion-content scroll="false">
+        <ion-scroll direction="y" style="height:100%;">
+            <div class="item item-divider shop-section-title">
+                <span class="title-copy">New</span>
+                <a class="button button-small button-dark section-action" ui-sref="app.shop.popular">More</a>
+            </div>
+            <ion-slide-box show-pager="false">
+                <ion-slide>
+                    <div class="row shop-products-narrow-cards-outer style-webkit-box">
+                        <div class="col col-42-new shop-product-narrow-card " ng-repeat="product in show_products | orderBy : 'create_date' | filter:{ type: '3' } | limitTo: 0-6 " style="padding-left: 0px;" ui-sref="app.product-detail({productId: product._id})">
+                            <div class="list card style-width-157px">
+                                <div class="item item-image">
+                                    <pre-img ratio="_1_1" helper-class="main-image">
+                                        <img ng-src="{{product.picture}}" spinner-on-load>
+                                    </pre-img>
+                                </div>
+                                <div class="item item-body">
+                                    <h2 class="card-title">{{product.title}}</h2>
+                                    <p class="card-description"><b>฿ {{product.product_prices[0].price}}</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-slide>
+                <ion-slide>
+                </ion-slide>
+            </ion-slide-box>
+            <ion-slide-box auto-play="true" does-continue="true" show-pager="false" slide-interval="4000" on-slide-changed="slideChanged(index)">
+                <ion-slide ng-repeat="hospital in hospital">
+                    <div class="row slide-content">
+                        <div class="col col-center user-data">
+                            <img class="img-shop" ng-src="{{hospital.img_hospital}}" />
+                        </div>
+                    </div>
+                </ion-slide>
+            </ion-slide-box>
+            <ion-slide-box show-pager="false" on-slide-changed="slideChanged(index)">
+                <ion-slide ng-repeat="hospital in hospital">
+                    <div class="row slide-content">
+                        <div class="col col-center user-data">
+                            <img class="img-shop img-hospital" ng-src="{{hospital.img_hospital}}" />
+                        </div>
+                    </div>
+                </ion-slide>
+            </ion-slide-box>
+            <div class="item item-divider shop-section-title">
+                <span class="title-copy">Best Seller</span>
+                <a class="button button-small button-dark section-action" ui-sref="app.shop.popular">More</a>
+            </div>
+            <ion-slide-box show-pager="false">
+                <ion-slide>
+                    <div class="row shop-products-narrow-cards-outer style-webkit-box">
+                        <div class="col col-42-new shop-product-narrow-card " ng-repeat="product in show_products | orderBy : create_date | filter:{ type: '3' } | limitTo: 0-6 " style="padding-left: 0px;" ui-sref="app.product-detail({productId: product._id})">
+                            <div class="list card style-width-157px">
+                                <div class="item item-image">
+                                    <pre-img ratio="_1_1" helper-class="main-image">
+                                        <img ng-src="{{product.picture}}" spinner-on-load>
+                                    </pre-img>
+                                </div>
+                                <div class="item item-body">
+                                    <h2 class="card-title">{{product.title}}</h2>
+                                    <p class="card-description"><b>฿ {{product.product_prices[0].price}}</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-slide>
+                <ion-slide>
+                </ion-slide>
+            </ion-slide-box>
+            <div class="item item-divider shop-section-title">
+                <span class="title-copy">Low Cost</span>
+                <a class="button button-small button-dark section-action" ui-sref="app.shop.popular">More</a>
+            </div>
+            <ion-slide-box show-pager="false">
+                <ion-slide>
+                    <div class="row shop-products-narrow-cards-outer style-webkit-box">
+                        <div class="col col-42-new shop-product-narrow-card " ng-repeat="product in show_products | orderBy : 'product_prices[0].price' | filter:{ type: '3' } | limitTo: 0-6 " style="padding-left: 0px;" ui-sref="app.product-detail({productId: product._id})">
+                            <div class="list card style-width-157px">
+                                <div class="item item-image">
+                                    <pre-img ratio="_1_1" helper-class="main-image">
+                                        <img ng-src="{{product.picture}}" spinner-on-load>
+                                    </pre-img>
+                                </div>
+                                <div class="item item-body">
+                                    <h2 class="card-title">{{product.title}}</h2>
+                                    <p class="card-description"><b>฿ {{product.product_prices[0].price}}</b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </ion-slide>
+                <ion-slide>
+                </ion-slide>
+            </ion-slide-box>
+            <ion-scroll>
+    </ion-content>
 </ion-view>
