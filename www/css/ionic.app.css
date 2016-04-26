@@ -9848,17 +9848,6 @@ ion-nav-bar.cart-color * {
   ion-nav-bar.cart-color * .buttons button::before {
     color: #FFFFFF; }
 
-    ion-nav-bar.cart-colors ion-header-bar {
-  background-color: #FF9D4C !important;
-  background: #FF9D4C !important;
-  border: none !important;
-  background-size: 0px !important; }
-
-ion-nav-bar.cart-colors * {
-  color: #FFFFFF; }
-  ion-nav-bar.cart-colors * .buttons button::before {
-    color: #FFFFFF; }
-
 .cart-view {
   background-color: #EEE;
   color: #444; }
