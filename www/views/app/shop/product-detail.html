@@ -1,45 +1,101 @@
 <ion-view view-title="" class="product-view">
-  <ion-nav-buttons side="secondary">
-    <button class="button button-icon button-clear ion-share"></button>
-  </ion-nav-buttons>
-  <ion-content overflow-scroll="true">
-    <div class="product-card-content">
-      <div class="item item-image">
-        <pre-img ratio="_1_1" helper-class="main-image">
-          <img ng-src="{{product.picture}}" spinner-on-load>
-        </pre-img>
-      </div>
-      <div class="item item-body">
-        <h2 class="product-title">{{product.title}}</h2>
-        <div>
+    <ion-nav-buttons side="secondary">
+        <button class="button button-icon button-clear ion-share"></button>
+    </ion-nav-buttons>
+    <ion-content overflow-scroll="true">
+        <div class="product-card-content">
+            <div class="item item-image">
+                <pre-img ratio="_2_1" helper-class="main-image">
+                    <img ng-src="{{product.picture}}" spinner-on-load>
+                </pre-img>
+            </div>
+            <div class="item item-body">
+                <h2 class="product-title">{{product.title}}</h2>
+                <!--         <div>
           <p class="product-like"><i class="icon ion-heart"></i>Like</p>
           <p class="likes"></i>837</p>
+        </div> -->
+                <div class="row">
+                    <div class="col-50" ng-repeat="product_price in product.product_prices">
+                        <p class="product-price" ng-click="showAddToCartPopup(product)">{{product_price.unit}} แพคเกจ {{product_price.price_aft_discount}}:แพคเกจ</p>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col col-10">
+                    </div>
+                    <div class="col col-80 text-center">
+                        <i class="icon" ng-class="product.rate>=1?'ion-ios-star':'ion-ios-star-outline'"></i>
+                        <i class="icon" ng-class="product.rate>=2?'ion-ios-star':'ion-ios-star-outline'"></i>
+                        <i class="icon" ng-class="product.rate>=3?'ion-ios-star':'ion-ios-star-outline'"></i>
+                        <i class="icon" ng-class="product.rate>=4?'ion-ios-star':'ion-ios-star-outline'"></i>
+                        <i class="icon" ng-class="product.rate>=5?'ion-ios-star':'ion-ios-star-outline'"></i>
+                    </div>
+                    <div class="col col-10">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col col-10">
+                    </div>
+                    <div class="col col-80 text-center">
+                        <div class="button-bar">
+                            <a class="button" ng-class="var==1?'btn-full':'btn-outline'" ng-click="click(1)">Detail</a>
+                            <a class="button" ng-class="var==2?'btn-full':'btn-outline'" ng-click="click(2)">Review</a>
+                        </div>
+                    </div>
+                    <div class="col col-10">
+                    </div>
+                </div>
+            </div>
+            <div ng-show="var=='1'" class="scrollAreas">
+                <div class="item item-body">
+                    <p class="product-description">รายการ : {{product.description}}</p>
+                    <p class="product-description">โดย : {{product.hospital}}</p>
+                </div>
+            </div>
+            <div ng-show="var=='2'" class="scrollAreas">
+                <div class="item item-body" ng-repeat="product_reviews in product.product_review">
+                    <div class="row" >
+                        <div class="col col-50">
+                            <p class="product-description">{{product_reviews.name}}</p>
+                        </div>
+                        <div class="col col-50 text-center">
+                            <i class="icon" ng-class="product_reviews.rate>=1?'ion-ios-star':'ion-ios-star-outline'"></i>
+                            <i class="icon" ng-class="product_reviews.rate>=2?'ion-ios-star':'ion-ios-star-outline'"></i>
+                            <i class="icon" ng-class="product_reviews.rate>=3?'ion-ios-star':'ion-ios-star-outline'"></i>
+                            <i class="icon" ng-class="product_reviews.rate>=4?'ion-ios-star':'ion-ios-star-outline'"></i>
+                            <i class="icon" ng-class="product_reviews.rate>=5?'ion-ios-star':'ion-ios-star-outline'"></i>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p class="product-description">{{product_reviews.desc}}</p>
+                    </div>
+                </div>
+                <div class="row">
+                    <button class="btn-orange button-full " ng-click="showAddRate(product)">
+                        Add a Review
+                    </button>
+                </div>
+            </div>
         </div>
-        <div ng-repeat="product_price in product.product_prices" >
-        <p class="product-price" ng-click="showAddToCartPopup(product)">ซื้อ {{product_price.unit}} แพคเกจ ราคา {{product_price.price_aft_discount}} / แพคเกจ</p>
-      </div>
-      </div>
-      <div class="item item-body">
-        <p class="product-description">{{product.description}}</p>
-      </div>
-    </div>
-    <div class="item item-divider shop-section-title">
-      <span class="title-copy">Related Products</span>
-    </div>
-    <div class="row shop-products-narrow-cards-outer shop-product-cards-scroller">
-      <div ng-repeat="related_product in product.related_products" class="col col-50 shop-product-narrow-card" ui-sref="app.product-detail({productId: related_product._id})">
-        <div class="list card">
-          <div class="item item-image">
-            <pre-img ratio="_1_1" helper-class="main-image">
-              <img ng-src="{{related_product.picture}}" spinner-on-load>
-            </pre-img>
-          </div>
-          <div class="item item-body">
-            <h2 class="card-title">{{related_product.title}}</h2>
-            <p class="card-description"><b>${{related_product.price}}</b> - {{related_product.description}}</p>
-          </div>
+        <div class="item item-divider shop-section-title">
+            <span class="title-copy">Related Products</span>
         </div>
-      </div>
-    </div>
-  </ion-content>
+        <div class="row shop-products-narrow-cards-outer shop-product-cards-scroller">
+            <div ng-repeat="related_product in product.related_products" class="col col-50 shop-product-narrow-card" ui-sref="app.product-detail({productId: related_product._id})">
+                <div class="list card">
+                    <div class="item item-image">
+                        <pre-img ratio="_1_1" helper-class="main-image">
+                            <img ng-src="{{related_product.picture}}" spinner-on-load>
+                        </pre-img>
+                    </div>
+                    <div class="item item-body">
+                        <h2 class="card-title">{{related_product.title}}</h2>
+                        <p class="card-description">{{related_product.description}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
 </ion-view>
