@@ -839,12 +839,12 @@
         "id": 3,
         "feed_id": 0,
         "feel" : 3,
-        "userId" : 4
+        "userId" : 6
         },{
         "id": 4,
         "feed_id": 0,
         "feel" : 6,
-        "userId" : 4
+        "userId" : 3
         },{
         "id": 5,
         "feed_id": 0,
@@ -854,130 +854,208 @@
         "id": 6,
         "feed_id": 0,
         "feel" : 2,
-        "userId" : 4
+        "userId" : 5
         },{
         "id": 7,
         "feed_id": 0,
         "feel" : 2,
-        "userId" : 4
+        "userId" : 1
         },{
         "id": 8,
         "feed_id": 0,
         "feel" : 6,
-        "userId" : 4
+        "userId" : 8
         }],
         "feed_comment" : [{
         "id": 2,
         "feed_id": 0,
-        "text": "Post4",
-        "userId" : 8
+        "text": "555",
+        "userId" : 5
         },{
         "id": 3,
         "feed_id": 0,
-        "text": "Post3",
-        "userId" : 8
+        "text": "ดีจัง",
+        "userId" : 4
         },{
         "id": 4,
         "feed_id": 0,
-        "text": "Post2",
-        "userId" : 8
+        "text": "Post  post ",
+        "userId" : 2
         },{
         "id": 5,
         "feed_id": 0,
-        "text": "Post1 ",
-        "userId" : 8
+        "text": "ว้าว!! ",
+        "userId" : 1
         }]
     },{
       "liked": false,
       "text": "โรงพยาบาลกรุงเทพ แพคเกจตรวจสุขภาพเข่า Knee Moving ",
       "picture": "https://www.bangkokhospital.com/assets/content/515eff90e88bd276b82798481d01fbce.png",
       "date": 1429935138465,
-      "id": 0,
-      "userId": 5,
+      "id": 1,
+      "userId":5,
       "feed_feel": [{
         "id": 1,
         "feed_id": 0,
         "feel" : 5,
+        "userId" : 9
+        },{
+        "id":2,
+        "feed_id": 0,
+        "feel" : 4,
         "userId" : 8
         },{
-        "id": 2,
-        "feed_id": 0,
-        "feel" : 4,
-        "userId" : 11
-        },{
-        "id": 3,
+        "id":3,
         "feed_id": 0,
         "feel" : 3,
-        "userId" : 11
+        "userId" : 6
         },{
-        "id": 4,
+        "id":4,
         "feed_id": 0,
         "feel" : 6,
-        "userId" : 12
+        "userId" : 6
         },{
-        "id": 5,
+        "id":5,
         "feed_id": 0,
         "feel" : 4,
-        "userId" : 13
+        "userId" : 5
         },{
-        "id": 6,
+        "id":6,
         "feed_id": 0,
         "feel" : 2,
-        "userId" : 14
+        "userId" : 4
         },{
-        "id": 7,
+        "id":7,
         "feed_id": 0,
         "feel" : 2,
-        "userId" : 98
+        "userId" : 3
         },{
-        "id": 8,
+        "id":8,
+        "feed_id": 0,
+        "feel" : 6,
+        "userId" : 2
+        },{
+        "id":99,
+        "feed_id": 0,
+        "feel" : 4,
+        "userId" : 1
+        }],
+        "feed_comment" : [{
+        "id":2,
+        "feed_id": 0,
+        "text": "น่าสนใจ",
+        "userId" :7
+        },{
+        "id":3,
+        "feed_id": 0,
+        "text": "ขอบคุณค่ะ",
+        "userId" : 6
+        },{
+        "id":4,
+        "feed_id": 0,
+        "text": "แปะๆ",
+        "userId" : 5
+        },{
+        "id":5,
+        "feed_id": 0,
+        "text": " น่าสนใจจังเลยค่ะ ",
+        "userId" : 4
+        },{
+        "id":6,
+        "feed_id": 0,
+        "text": "แปะๆ",
+        "userId" : 3
+        },{
+        "id": 15,
+        "feed_id": 0,
+        "text": "น่าสนๆ",
+        "userId" : 2
+        },{
+        "id": 22,
+        "feed_id": 0,
+        "text": "แปะลิ้งค์ๆ",
+        "userId" : 1
+        }]
+    },{
+      "liked": false,
+      "text": "ยิ้มสวยด้วยแพทย์ปีที่ 19  โรงพยาบาลยันฮี รักษาเด็กปากแหว่ง-เพดานโหว่ ฟรี  ปีละ 100 ราย   และได้ผ่าตัดไปแล้ว  1,401  ราย  สอบถามข้อมูลเพิ่มเติม โทร. 1723  ตั้งแต่วันนี้ - 31 ธันวาคม 2559 ",
+      "picture": "http://th.yanhee.net:8088/FileUpload/Activities/OriginalImage/banner_file_01_03_2016_17_11_48.jpg",
+      "date": 1429935138465,
+      "id": 2,
+      "userId":5,
+      "feed_feel": [{
+        "id": 1,
+        "feed_id": 0,
+        "feel" : 5,
+        "userId" : 1
+        },{
+        "id":2,
+        "feed_id": 0,
+        "feel" : 4,
+        "userId" : 2
+        },{
+        "id":3,
+        "feed_id": 0,
+        "feel" : 3,
+        "userId" : 3
+        },{
+        "id":4,
         "feed_id": 0,
         "feel" : 6,
         "userId" : 4
         },{
-        "id": 99,
+        "id":5,
         "feed_id": 0,
         "feel" : 4,
-        "userId" : 32
+        "userId" : 5
+        },{
+        "id":6,
+        "feed_id": 0,
+        "feel" : 2,
+        "userId" : 6
+        },{
+        "id":7,
+        "feed_id": 0,
+        "feel" : 2,
+        "userId" : 7
+        },{
+        "id":8,
+        "feed_id": 0,
+        "feel" : 6,
+        "userId" : 8
         }],
         "feed_comment" : [{
-        "id": 2,
+        "id":2,
         "feed_id": 0,
         "text": "น่าสนใจ",
-        "userId" : 8
+        "userId" :1
         },{
-        "id": 3,
+        "id":3,
         "feed_id": 0,
         "text": "ขอบคุณค่ะ",
-        "userId" : 33
-        },{
-        "id": 4,
-        "feed_id": 0,
-        "text": "แปะๆ",
-        "userId" : 9
-        },{
-        "id": 5,
-        "feed_id": 0,
-        "text": " น่าสนใจจังเลยค่ะ ",
-        "userId" : 15
-        },{
-        "id": 6,
-        "feed_id": 0,
-        "text": "แปะลิ้งค์ๆ",
         "userId" : 2
         },{
-        "id": 15,
+        "id":4,
+        "feed_id": 0,
+        "text": "แปะๆ",
+        "userId" : 3
+        },{
+        "id":5,
+        "feed_id": 0,
+        "text": " น่าสนใจจังเลยค่ะ ",
+        "userId" : 4
+        },{
+        "id":6,
         "feed_id": 0,
         "text": "แปะลิ้งค์ๆ",
-        "userId" : 15
+        "userId" : 5
         }]
-    }
-  ],
+    }],
 
   "users": [
     {
       "followers": 345,
-      "following": 58,
+      "following": 8,
       "about": "Design Lead of Project Fi. Love adventures, green tea, and the color pink.",
       "name": "Brynn Evans",
       "picture": "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg",

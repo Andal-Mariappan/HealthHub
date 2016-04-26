@@ -62,6 +62,14 @@ angular.module('your_app_name.app.controllers', [])
 
 })
 
+.controller('PostDetailCtrl', function($scope, $stateParams, PostService, $ionicPopup, $ionicLoading) {
+  var postId = $stateParams.postId;
+  console.log(postId);
+  PostService.getPost(postId).then(function(post){
+    $scope.post = post;
+  });
+   
+})
 
 .controller('ProductCtrl', function($scope, $stateParams, ShopService, $ionicPopup, $ionicLoading) {
   var productId = $stateParams.productId;
@@ -111,7 +119,7 @@ angular.module('your_app_name.app.controllers', [])
   $scope.posts = [];
   $scope.page = 1;
   $scope.totalPages = 1;
-
+  $scope.chat2 = "gdfgdfg";
   $scope.doRefresh = function() {
     PostService.getFeed(1)
     .then(function(data){
@@ -126,6 +134,14 @@ angular.module('your_app_name.app.controllers', [])
     //do something to load your new data here
     $scope.$broadcast('scroll.refreshComplete');
   };
+  $scope.typeLike = function() {
+    //alert("");
+  };
+  $scope.sendMessage = function() {
+    $scope.chat2 = null;
+    console.log('tttt');
+  };
+  
 
   $scope.loadMoreData = function(){
     $scope.page += 1;
@@ -145,6 +161,7 @@ angular.module('your_app_name.app.controllers', [])
   };
 
   $scope.doRefresh();
+
 
 })
 
@@ -217,6 +234,7 @@ angular.module('your_app_name.app.controllers', [])
   $scope.showPrivacyPolicy = function() {
     $scope.privacy_policy_modal.show();
   };
+  
 
 })
 

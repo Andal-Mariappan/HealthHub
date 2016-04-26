@@ -58,6 +58,18 @@ angular.module('your_app_name', [
     }
   })
 
+ 
+
+  .state('app.postCardDetail', {
+    url: "/postCardDetail/:postId",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/partials/post-card-detail.html",
+        controller: 'PostDetailCtrl'
+      }
+    }
+  })
+
   .state('app.profile', {
     abstract: true,
     url: '/profile/:userId',

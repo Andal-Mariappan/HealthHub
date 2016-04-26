@@ -28,6 +28,19 @@ angular.module('your_app_name.app.services', [])
     return dfd.promise;
   };
 
+  this.getPost = function(postId){
+    var dfd = $q.defer();
+    $http.get('database.json').success(function(database) {
+      var post = _.find(database.posts, function(posts){ return posts.id == postId; });
+      post.user = _.find(database.users, function(user){ return user._id == post.userId; });
+      for (var i =  post.feed_comment.length - 1; i >= 0; i--) {
+        post.feed_comment[i].user = _.find(database.users, function(user){ return user._id == post.feed_comment[i].userId; });
+      };
+      dfd.resolve(post);
+    });
+    return dfd.promise;
+  };
+
   this.getUserPosts = function(userId){
     var dfd = $q.defer();
 
