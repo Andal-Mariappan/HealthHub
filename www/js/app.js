@@ -176,7 +176,14 @@ angular.module('your_app_name', [
       }
     }
   })
-
+  .state('app.shop-order', {
+    url: "/shop-order",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/shop/partials/shop-order.html"
+      }
+    }
+  })
 
   //AUTH ROUTES
   .state('facebook-sign-in', {

@@ -15,18 +15,22 @@
 }
 
 .wide-as-needed {
-  overflow: scroll;
-  white-space: nowrap;
+    overflow: scroll;
+    white-space: nowrap;
 }
-.style-webkit-box{
-	display: -webkit-box;
+
+.style-webkit-box {
+    display: -webkit-box;
 }
-.style-padding-left-0{
-	padding-left: 0px;
+
+.style-padding-left-0 {
+    padding-left: 0px;
 }
-.style-width-157px{
-	width: 110px; 
+
+.style-width-157px {
+    width: 110px;
 }
+
 .col-42-new {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 50%;
@@ -36,6 +40,8 @@
     flex: 0 0 35%;
     max-width: 35%;
 }
-.img-hospital{
-  height:112px;
+
+.img-hospital {
+    height: 112px;
 }
+
