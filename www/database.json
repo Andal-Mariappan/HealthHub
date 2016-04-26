@@ -480,36 +480,135 @@
                 "rate": ""
             }]
         }, {
-            "price": 171,
-            "description": "Cillum amet eu do sit labore et qui in aliqua minim est non. Pariatur ipsum fugiat elit ut magna cupidatat consectetur sint veniam ut.",
-            "title": "irure occaecat occaecat quis",
-            "picture": "img/sample_images/products/1.jpeg",
-            "_id": 1
+        "product_prices": [{
+            "id": 1,
+            "price": 2000,
+            "unit": 1,
+            "discount": "",
+            "price_aft_discount": 2000,
+            "amount": 2000
         }, {
-            "price": 349,
-            "description": "Occaecat Lorem cupidatat id voluptate nulla ut enim velit esse. Voluptate culpa consectetur exercitation qui ea et nisi officia enim aute duis ullamco.",
-            "title": "culpa duis ex minim",
-            "picture": "img/sample_images/products/6.jpeg",
-            "_id": 2
-        }, {
-            "price": 159,
-            "description": "Et laborum nulla labore sint ad magna cupidatat veniam. Sint Lorem duis proident non magna.",
-            "title": "cupidatat sunt cupidatat excepteur",
-            "picture": "img/sample_images/products/7.jpeg",
-            "_id": 3
-        }, {
-            "price": 147,
-            "description": "Nulla reprehenderit cillum et ullamco eiusmod eu quis do sint. Ex occaecat proident ullamco cillum ipsum laboris deserunt voluptate veniam pariatur.",
-            "title": "aliquip irure culpa excepteur",
-            "picture": "img/sample_images/products/4.jpeg",
-            "_id": 4
-        }, {
-            "price": 375,
-            "description": "Adipisicing ut aliquip ullamco aute ipsum excepteur occaecat. Cupidatat consequat dolor qui veniam reprehenderit ex dolore.",
-            "title": "laborum quis mollit eiusmod",
-            "picture": "img/sample_images/products/6.jpeg",
-            "_id": 5
+            "id": 2,
+            "price": 2000,
+            "unit": 2,
+            "discount": "10%",
+            "price_aft_discount": 1800,
+            "amount": 3600
         }],
+        "description": "ตรวจร่างกายโดยแพทย์, ตรวจการตั้งครรภ์",
+        "title": "ตรวจการตั้งครรภ์",
+        "picture": "img/sample_images/products/product5.jpg",
+        "_id": 5,
+        "type": 1,
+        "start_date": "12/2/16",
+        "expire_date": "31/7/16",
+        "create_date": 1429935138465,
+        "hospital": "โรงพยาบาลกรุงเทพ",
+        "product_review": [{
+            "id": "1",
+            "name": "John",
+            "desc": "บริการดีมากๆๆๆๆ",
+            "rate": ""
+        }]
+    },{
+        "product_prices": [{
+            "id": 1,
+            "price": 4000,
+            "unit": 1,
+            "discount": "",
+            "price_aft_discount": 4000,
+            "amount": 4000
+        }, {
+            "id": 2,
+            "price": 4000,
+            "unit": 2,
+            "discount": "10%",
+            "price_aft_discount": 3600,
+            "amount": 7200
+        }],
+        "description": "ตรวจร่างกายโดยแพทย์, ตรวจหามะเร็งเต้านม",
+        "title": "ตรวจหามะเร็เต้านม",
+        "picture": "img/sample_images/products/product3.jpg",
+        "_id": 4,
+        "type": 1,
+        "start_date": "12/2/16",
+        "expire_date": "31/7/16",
+        "create_date": 1429935138465,
+        "hospital": "โรงพยาบาลกรุงเทพ",
+        "product_review": [{
+            "id": "1",
+            "name": "John",
+            "desc": "บริการดีมากๆๆๆๆ",
+            "rate": ""
+        },{
+            "id": "2",
+            "name": "Mary",
+            "desc": "ดำเนินการช้าไปนิดนึงนะคะ",
+            "rate": ""
+        }]
+    },{
+        "product_prices": [{
+            "id": 1,
+            "price": 5000,
+            "unit": 1,
+            "discount": "",
+            "price_aft_discount": 5000,
+            "amount": 5000
+        }, {
+            "id": 2,
+            "price": 5000,
+            "unit": 2,
+            "discount": "10%",
+            "price_aft_discount": 4500,
+            "amount": 9000
+        }],
+        "description": "ตรวจร่างกายโดยแพทย์, ตรวจหามะเร็งต่อมลูกหมาก",
+        "title": "ตรวจหามะเร็งต่อมลูกหมาก",
+        "picture": "img/sample_images/products/product4.jpg",
+        "_id": 3,
+        "type": 1,
+        "start_date": "22/4/16",
+        "expire_date": "30/8/16",
+        "create_date": 1429935138465,
+        "hospital": "โรงพยาบาลกรุงเทพ",
+        "product_review": [{
+            "id": "1",
+            "name": "John",
+            "desc": "บริการดีมากๆ",
+            "rate": ""
+        }]
+    }, {
+        "product_prices": [{
+            "id": 1,
+            "price": 3000,
+            "unit": 1,
+            "discount": "",
+            "price_aft_discount": 3000,
+            "amount": 3000
+        }, {
+            "id": 2,
+            "price": 3000,
+            "unit": 2,
+            "discount": "10%",
+            "price_aft_discount": 2700,
+            "amount": 5400
+        }],
+        "description": "ตรวจร่างกายโดยแพทย์, ตรวจหามะเร็งปากมดลูก",
+        "title": "ตรวจหามะเร็งปากมดลูก",
+        "picture": "img/sample_images/products/product2.jpg",
+        "_id": 1,
+        "type": 1,
+        "start_date": "22/4/16",
+        "expire_date": "30/8/16",
+        "create_date": 1429935138465,
+        "hospital": "โรงพยาบาลกรุงเทพ",
+        "product_review": [{
+            "id": "1",
+            "name": "John",
+            "desc": "บริการดีมากๆ",
+            "rate": ""
+        }]
+    }],
         "product_prices": [{
             "id": 1,
             "price": 5000,
@@ -533,13 +632,20 @@
         "start_date": "25/4/16",
         "expire_date": "30/6/16",
         "create_date": 1429935138465,
+        "rate": 4,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
             "id": "1",
             "name": "John",
             "desc": "บริการดีมากๆ",
-            "rate": ""
-        }]
+            "rate": 5
+        },{
+            "id": "2",
+            "name": "Maria",
+            "desc": "บริการดีมากค่ะ",
+            "rate": 4
+        }
+        ]
     }],
   "posts": [
     {
@@ -563,12 +669,12 @@
         "id": 3,
         "feed_id": 0,
         "feel" : 3,
-        "userId" : 4
+        "userId" : 6
         },{
         "id": 4,
         "feed_id": 0,
         "feel" : 6,
-        "userId" : 4
+        "userId" : 3
         },{
         "id": 5,
         "feed_id": 0,
@@ -578,195 +684,285 @@
         "id": 6,
         "feed_id": 0,
         "feel" : 2,
-        "userId" : 4
+        "userId" : 5
         },{
         "id": 7,
         "feed_id": 0,
         "feel" : 2,
-        "userId" : 4
+        "userId" : 1
         },{
         "id": 8,
         "feed_id": 0,
         "feel" : 6,
-        "userId" : 4
+        "userId" : 8
         }],
         "feed_comment" : [{
         "id": 2,
         "feed_id": 0,
-        "text": "Post4",
-        "userId" : 8
+        "text": "555",
+        "userId" : 5
         },{
         "id": 3,
         "feed_id": 0,
-        "text": "Post3",
-        "userId" : 8
+        "text": "ดีจัง",
+        "userId" : 4
         },{
         "id": 4,
         "feed_id": 0,
-        "text": "Post2",
-        "userId" : 8
+        "text": "Post  post ",
+        "userId" : 2
         },{
         "id": 5,
         "feed_id": 0,
-        "text": "Post1 ",
-        "userId" : 8
+        "text": "ว้าว!! ",
+        "userId" : 1
         }]
     },{
       "liked": false,
       "text": "โรงพยาบาลกรุงเทพ แพคเกจตรวจสุขภาพเข่า Knee Moving ",
       "picture": "https://www.bangkokhospital.com/assets/content/515eff90e88bd276b82798481d01fbce.png",
       "date": 1429935138465,
-      "id": 0,
-      "userId": 5,
+      "id": 1,
+      "userId":5,
       "feed_feel": [{
         "id": 1,
         "feed_id": 0,
         "feel" : 5,
+        "userId" : 9
+        },{
+        "id":2,
+        "feed_id": 0,
+        "feel" : 4,
         "userId" : 8
         },{
-        "id": 2,
-        "feed_id": 0,
-        "feel" : 4,
-        "userId" : 11
-        },{
-        "id": 3,
+        "id":3,
         "feed_id": 0,
         "feel" : 3,
-        "userId" : 11
+        "userId" : 6
         },{
-        "id": 4,
+        "id":4,
         "feed_id": 0,
         "feel" : 6,
-        "userId" : 12
+        "userId" : 6
         },{
-        "id": 5,
+        "id":5,
         "feed_id": 0,
         "feel" : 4,
-        "userId" : 13
+        "userId" : 5
         },{
-        "id": 6,
+        "id":6,
         "feed_id": 0,
         "feel" : 2,
-        "userId" : 14
+        "userId" : 4
         },{
-        "id": 7,
+        "id":7,
         "feed_id": 0,
         "feel" : 2,
-        "userId" : 98
+        "userId" : 3
         },{
-        "id": 8,
+        "id":8,
+        "feed_id": 0,
+        "feel" : 6,
+        "userId" : 2
+        },{
+        "id":99,
+        "feed_id": 0,
+        "feel" : 4,
+        "userId" : 1
+        }],
+        "feed_comment" : [{
+        "id":2,
+        "feed_id": 0,
+        "text": "น่าสนใจ",
+        "userId" :7
+        },{
+        "id":3,
+        "feed_id": 0,
+        "text": "ขอบคุณค่ะ",
+        "userId" : 6
+        },{
+        "id":4,
+        "feed_id": 0,
+        "text": "แปะๆ",
+        "userId" : 5
+        },{
+        "id":5,
+        "feed_id": 0,
+        "text": " น่าสนใจจังเลยค่ะ ",
+        "userId" : 4
+        },{
+        "id":6,
+        "feed_id": 0,
+        "text": "แปะๆ",
+        "userId" : 3
+        },{
+        "id": 15,
+        "feed_id": 0,
+        "text": "น่าสนๆ",
+        "userId" : 2
+        },{
+        "id": 22,
+        "feed_id": 0,
+        "text": "แปะลิ้งค์ๆ",
+        "userId" : 1
+        }]
+    },{
+      "liked": false,
+      "text": "ยิ้มสวยด้วยแพทย์ปีที่ 19  โรงพยาบาลยันฮี รักษาเด็กปากแหว่ง-เพดานโหว่ ฟรี  ปีละ 100 ราย   และได้ผ่าตัดไปแล้ว  1,401  ราย  สอบถามข้อมูลเพิ่มเติม โทร. 1723  ตั้งแต่วันนี้ - 31 ธันวาคม 2559 ",
+      "picture": "http://th.yanhee.net:8088/FileUpload/Activities/OriginalImage/banner_file_01_03_2016_17_11_48.jpg",
+      "date": 1429935138465,
+      "id": 2,
+      "userId":5,
+      "feed_feel": [{
+        "id": 1,
+        "feed_id": 0,
+        "feel" : 5,
+        "userId" : 1
+        },{
+        "id":2,
+        "feed_id": 0,
+        "feel" : 4,
+        "userId" : 2
+        },{
+        "id":3,
+        "feed_id": 0,
+        "feel" : 3,
+        "userId" : 3
+        },{
+        "id":4,
         "feed_id": 0,
         "feel" : 6,
         "userId" : 4
         },{
-        "id": 99,
+        "id":5,
         "feed_id": 0,
         "feel" : 4,
-        "userId" : 32
+        "userId" : 5
+        },{
+        "id":6,
+        "feed_id": 0,
+        "feel" : 2,
+        "userId" : 6
+        },{
+        "id":7,
+        "feed_id": 0,
+        "feel" : 2,
+        "userId" : 7
+        },{
+        "id":8,
+        "feed_id": 0,
+        "feel" : 6,
+        "userId" : 8
         }],
         "feed_comment" : [{
-        "id": 2,
+        "id":2,
         "feed_id": 0,
         "text": "น่าสนใจ",
-        "userId" : 8
+        "userId" :1
         },{
-        "id": 3,
+        "id":3,
         "feed_id": 0,
         "text": "ขอบคุณค่ะ",
-        "userId" : 33
-        },{
-        "id": 4,
-        "feed_id": 0,
-        "text": "แปะๆ",
-        "userId" : 9
-        },{
-        "id": 5,
-        "feed_id": 0,
-        "text": " น่าสนใจจังเลยค่ะ ",
-        "userId" : 15
-        },{
-        "id": 6,
-        "feed_id": 0,
-        "text": "แปะลิ้งค์ๆ",
         "userId" : 2
         },{
-        "id": 15,
+        "id":4,
+        "feed_id": 0,
+        "text": "แปะๆ",
+        "userId" : 3
+        },{
+        "id":5,
+        "feed_id": 0,
+        "text": " น่าสนใจจังเลยค่ะ ",
+        "userId" : 4
+        },{
+        "id":6,
         "feed_id": 0,
         "text": "แปะลิ้งค์ๆ",
-        "userId" : 15
+        "userId" : 5
         }]
+    }],
+
+  "users": [
+    {
+      "followers": 345,
+      "following": 8,
+      "about": "Design Lead of Project Fi. Love adventures, green tea, and the color pink.",
+      "name": "Brynn Evans",
+      "picture": "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg",
+      "_id": 0
+    },
+    {
+      "following": 1030,
+      "followers": 1390,
+      "about": "Do laboris adipisicing consequat reprehenderit consequat in sint sit duis tempor velit. Culpa in aliquip aliqua deserunt minim voluptate voluptate quis veniam tempor labore voluptate anim.",
+      "name": "Jane Salas",
+      "picture": "img/sample_images/people/5.jpeg",
+      "_id": 1
+    },
+    {
+      "following": 322,
+      "followers": 57,
+      "about": "Ad mollit irure consequat minim in aute laborum ad qui irure Lorem duis sint. Elit et id exercitation pariatur ad.",
+      "name": "Mcbride Preston",
+      "picture": "img/sample_images/people/4.jpeg",
+      "_id": 2
+    },
+    {
+      "following": 756,
+      "followers": 1110,
+      "about": "Pariatur cillum sit consequat sunt sint. Cillum esse enim nisi aute dolore irure aliquip consectetur culpa nisi dolore.",
+      "name": "Jessica Hahn",
+      "picture": "img/sample_images/people/3.jpeg",
+      "_id": 3
+    },
+    {
+      "following": 230,
+      "followers": 1311,
+      "about": "Magna est dolore nisi ad. Voluptate sint do tempor cupidatat irure incididunt occaecat laboris Lorem aliqua.",
+      "name": "Jean Gilmore",
+      "picture": "img/sample_images/people/1.jpeg",
+      "_id": 4
+    },
+    {
+      "following": 386,
+      "followers": 433,
+      "about": "Dolor officia laborum officia aliquip laboris eu pariatur id nisi officia elit fugiat. Ad consequat amet ipsum ullamco adipisicing officia.",
+      "name": "Wendy Schwartz",
+      "picture": "img/sample_images/people/4.jpeg",
+      "_id": 5
+    },
+    {
+      "following": 429,
+      "followers": 1214,
+      "about": "Velit veniam anim anim sint occaecat et cupidatat elit Lorem duis reprehenderit ea consectetur mollit. Eiusmod esse mollit minim exercitation dolor pariatur nulla anim enim.",
+      "name": "Earnestine Lara",
+      "picture": "img/sample_images/people/3.jpeg",
+      "_id": 6
+    },
+    {
+      "following": 452,
+      "followers": 177,
+      "about": "Irure reprehenderit amet aliquip nostrud adipisicing aute excepteur voluptate et culpa sunt voluptate eu laborum. Amet ipsum deserunt aliqua pariatur tempor occaecat sit exercitation eiusmod dolor minim anim velit dolor.",
+      "name": "Patricia Martinez",
+      "picture": "img/sample_images/people/4.jpeg",
+      "_id": 7
+    },
+    {
+      "following": 829,
+      "followers": 254,
+      "about": "Eiusmod ea aute minim laborum exercitation non non dolor anim dolore consectetur reprehenderit. Occaecat cillum occaecat non qui Lorem ipsum incididunt anim deserunt ipsum irure labore nulla enim.",
+      "name": "Blake Hancock",
+      "picture": "img/sample_images/people/4.jpeg",
+      "_id": 8
+    },
+    {
+      "following": 503,
+      "followers": 971,
+      "about": "Excepteur adipisicing magna quis dolore quis sit qui in dolor ut amet dolore. Mollit labore sint do proident irure dolor id commodo ex adipisicing.",
+      "name": "Lowe Fox",
+      "picture": "img/sample_images/people/5.jpeg",
+      "_id": 9
     }
-  ],
-    "users": [{
-        "followers": 345,
-        "following": 58,
-        "about": "Design Lead of Project Fi. Love adventures, green tea, and the color pink.",
-        "name": "Brynn Evans",
-        "picture": "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg",
-        "_id": 0
-    }, {
-        "following": 1030,
-        "followers": 1390,
-        "about": "Do laboris adipisicing consequat reprehenderit consequat in sint sit duis tempor velit. Culpa in aliquip aliqua deserunt minim voluptate voluptate quis veniam tempor labore voluptate anim.",
-        "name": "Jane Salas",
-        "picture": "img/sample_images/people/5.jpeg",
-        "_id": 1
-    }, {
-        "following": 322,
-        "followers": 57,
-        "about": "Ad mollit irure consequat minim in aute laborum ad qui irure Lorem duis sint. Elit et id exercitation pariatur ad.",
-        "name": "Mcbride Preston",
-        "picture": "img/sample_images/people/4.jpeg",
-        "_id": 2
-    }, {
-        "following": 756,
-        "followers": 1110,
-        "about": "Pariatur cillum sit consequat sunt sint. Cillum esse enim nisi aute dolore irure aliquip consectetur culpa nisi dolore.",
-        "name": "Jessica Hahn",
-        "picture": "img/sample_images/people/3.jpeg",
-        "_id": 3
-    }, {
-        "following": 230,
-        "followers": 1311,
-        "about": "Magna est dolore nisi ad. Voluptate sint do tempor cupidatat irure incididunt occaecat laboris Lorem aliqua.",
-        "name": "Jean Gilmore",
-        "picture": "img/sample_images/people/1.jpeg",
-        "_id": 4
-    }, {
-        "following": 386,
-        "followers": 433,
-        "about": "Dolor officia laborum officia aliquip laboris eu pariatur id nisi officia elit fugiat. Ad consequat amet ipsum ullamco adipisicing officia.",
-        "name": "Wendy Schwartz",
-        "picture": "img/sample_images/people/4.jpeg",
-        "_id": 5
-    }, {
-        "following": 429,
-        "followers": 1214,
-        "about": "Velit veniam anim anim sint occaecat et cupidatat elit Lorem duis reprehenderit ea consectetur mollit. Eiusmod esse mollit minim exercitation dolor pariatur nulla anim enim.",
-        "name": "Earnestine Lara",
-        "picture": "img/sample_images/people/3.jpeg",
-        "_id": 6
-    }, {
-        "following": 452,
-        "followers": 177,
-        "about": "Irure reprehenderit amet aliquip nostrud adipisicing aute excepteur voluptate et culpa sunt voluptate eu laborum. Amet ipsum deserunt aliqua pariatur tempor occaecat sit exercitation eiusmod dolor minim anim velit dolor.",
-        "name": "Patricia Martinez",
-        "picture": "img/sample_images/people/4.jpeg",
-        "_id": 7
-    }, {
-        "following": 829,
-        "followers": 254,
-        "about": "Eiusmod ea aute minim laborum exercitation non non dolor anim dolore consectetur reprehenderit. Occaecat cillum occaecat non qui Lorem ipsum incididunt anim deserunt ipsum irure labore nulla enim.",
-        "name": "Blake Hancock",
-        "picture": "img/sample_images/people/4.jpeg",
-        "_id": 8
-    }, {
-        "following": 503,
-        "followers": 971,
-        "about": "Excepteur adipisicing magna quis dolore quis sit qui in dolor ut amet dolore. Mollit labore sint do proident irure dolor id commodo ex adipisicing.",
-        "name": "Lowe Fox",
-        "picture": "img/sample_images/people/5.jpeg",
-        "_id": 9
-    }]
+  ]
 
 }

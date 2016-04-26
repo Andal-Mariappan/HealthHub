@@ -1,0 +1,20 @@
+<ion-view view-title="Search" class="shop-sale-view">
+    <ion-content scroll="false">
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" ng-model="search">
+            </label>
+        </div>
+        <ion-scroll direction="y" style="height:85%;">
+            <div class="list">
+                <a class="item item-thumbnail-left" ui-sref="app.product-detail({productId: product._id})" ng-repeat="product in products | filter:search">
+                    <img src="{{product.picture}}">
+                    <h2>{{product.title}}</h2>
+                    <p>{{product.description}}</p>
+                    <p>฿ {{product.product_prices[0].price}}</p>
+                </a>
+            </div>
+        </ion-scroll>
+    </ion-content>
+</ion-view>
