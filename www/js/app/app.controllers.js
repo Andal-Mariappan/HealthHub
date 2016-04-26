@@ -70,6 +70,14 @@ angular.module('your_app_name.app.controllers', [])
     $scope.product = product;
   });
 
+        $scope.var = 1;
+        $scope.click = function(num) {
+            $scope.var = num;
+        }
+
+
+  
+
   // show add to cart popup on button click
   $scope.showAddToCartPopup = function(product) {
     $scope.data = {};
@@ -104,7 +112,44 @@ angular.module('your_app_name.app.controllers', [])
       }
     });
   };
-})
+
+
+  // show add to rating on button click
+  $scope.showAddRate = function(product) {
+    $scope.data = {};
+    $scope.data.product = product;
+    $scope.data.productOption = 1;
+    $scope.data.productQuantity = 1;
+
+    var myPopup = $ionicPopup.show({
+      cssClass: 'add-to-cart-popup',
+      templateUrl: 'views/app/shop/partials/add-rating.html',
+      title: 'Write a Review',
+      scope: $scope,
+      buttons: [
+        { text: '', type: 'close-popup ion-ios-close-outline' },
+        {
+          text: 'Send',
+          onTap: function(e) {
+            return $scope.data;
+          }
+        }
+      ]
+    });
+    myPopup.then(function(res) {
+      if(res)
+      {
+        $ionicLoading.show({ template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Sending</p>', duration: 1000 });
+        ShopService.addProductToCart(res.product);
+        console.log('Item added to cart!', res);
+      }
+      else {
+        console.log('Popup closed');
+      }
+    });
+  };
+
+  })
 
 
 .controller('FeedCtrl', function($scope, PostService) {
