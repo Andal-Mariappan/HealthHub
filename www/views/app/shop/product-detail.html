@@ -15,7 +15,9 @@
           <p class="product-like"><i class="icon ion-heart"></i>Like</p>
           <p class="likes"></i>837</p>
         </div>
-        <p class="product-price" ng-click="showAddToCartPopup(product)">${{product.price}}</p>
+        <div ng-repeat="product_price in product.product_prices" >
+        <p class="product-price" ng-click="showAddToCartPopup(product)">ซื้อ {{product_price.unit}} แพคเกจ ราคา {{product_price.price_aft_discount}} / แพคเกจ</p>
+      </div>
       </div>
       <div class="item item-body">
         <p class="product-description">{{product.description}}</p>
