@@ -160,7 +160,8 @@ angular.module('your_app_name.app.controllers', [])
 
 
   ShopService.getProducts().then(function(products){
-    $scope.popular_products = products.slice(0, 2);
+    $scope.show_products = products;
+
   });
 })
 

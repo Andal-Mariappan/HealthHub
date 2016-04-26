@@ -3407,7 +3407,7 @@ body.grade-c {
 .scroll-bar-indicator {
   position: absolute;
   border-radius: 4px;
-  background: rgba(0, 0, 0, 0.3);
+  /*background: rgba(0, 0, 0, 0.3);*/
   opacity: 1;
   -webkit-transition: opacity 0.3s linear;
   transition: opacity 0.3s linear; }
@@ -5610,7 +5610,7 @@ ion-tabs.tabs-color-active-dark .tab-item {
  * --------------------------------------------------
  */
 .item {
-  border-color: #ddd;
+  border-color: #FFF;
   background-color: #fff;
   color: #444;
   position: relative;

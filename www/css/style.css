@@ -1,4 +1,108 @@
 /* Empty. Add your own CSS if you like */
-.mg-top{
-	margin-top:70px; 
+
+.img-shop {
+    width: 100%;
+    padding: 5px 5px 0px 0px;
 }
+
+.img-shop-new {
+    width: 50%;
+    padding: 5px 5px 0px 0px;
+}
+
+.mg-top {
+    margin-top: 70px;
+}
+
+.wide-as-needed {
+    overflow: scroll;
+    white-space: nowrap;
+}
+
+.style-webkit-box {
+    display: -webkit-box;
+}
+
+.style-padding-left-0 {
+    padding-left: 0px;
+}
+
+.style-width-157px {
+    width: 110px;
+}
+
+.col-42-new {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 50%;
+    -moz-box-flex: 0;
+    -moz-flex: 0 0 50%;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 35%;
+    max-width: 35%;
+}
+<<<<<<< HEAD
+.img-hospital{
+  height:112px;
+}
+
+ul.rating li {
+  display: inline;
+  border: 0px;
+  background: none;
+  padding: 5px 10px;
+}
+ul.rating li i {
+  font-size: 30px;
+}
+.btn-orange{
+    background-color: #ff9d4c;
+    color: white;
+    font-style: bold;
+    border-radius: 4px;
+    min-height: 34px;
+    border:none;
+}
+
+.btn-outline{
+    float: right;
+    background-color: #f3b582;
+    color: #FFF;
+    padding: 2px 8px;
+    min-height: 20px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 12px;
+    border:none;
+}
+
+.btn-full{
+    float: right;
+    background-color: #ff9d4c;
+    color: #FFF;
+    padding: 2px 8px;
+    border-radius: 4px;
+    min-height: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    border:none;
+}
+
+.img-hospital {
+    height: 114px;
+}
+
+.no-border-radius {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    max-width: 40px;
+    max-height: 40px;
+    width: 100%;
+    height: 100%;
+    border-radius: 0%;
+    color: inherit;
+    text-decoration: none;
+    padding-left: 72px;
+    min-height: 72px;
+}
+
