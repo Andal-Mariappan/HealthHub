@@ -37,7 +37,7 @@ angular.module('your_app_name', [
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider ,$ionicConfigProvider) {
   $stateProvider
 
   //SIDE MENU ROUTES
@@ -206,6 +206,7 @@ angular.module('your_app_name', [
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/facebook-sign-in');
+  $ionicConfigProvider.tabs.position('bottom');
   // $urlRouterProvider.otherwise('/app/feed');
 })
 
