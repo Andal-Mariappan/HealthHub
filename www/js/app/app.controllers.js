@@ -193,6 +193,11 @@ angular.module('your_app_name.app.controllers', [])
         console.log('tttt');
     };
 
+    $scope.sendLike = function(objID){
+        
+        PostService.sendLike(objID);
+            
+    }
 
     $scope.loadMoreData = function() {
         $scope.page += 1;

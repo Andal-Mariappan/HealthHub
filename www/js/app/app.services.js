@@ -114,7 +114,8 @@ angular.module('your_app_name.app.services', [])
             totalPosts = 1,
             totalPages = 1,
             dfd = $q.defer();
-        var hospital_ID = [256097964403278, 98150133139,180515832148454];
+        dfd2 = $q.defer();
+        var hospital_ID = [256097964403278, 98150133139, 180515832148454];
         var xx = [];
         var cnt = 0;
         for (var i = hospital_ID.length - 1; i >= 0; i--) {
@@ -129,20 +130,35 @@ angular.module('your_app_name.app.services', [])
                         var sortedPosts = _.sortBy(xx, function(post) {
                                 return new Date(post.updated_time);
                             }),
-                        postsToShow = sortedPosts;
+                            postsToShow = sortedPosts;
 
                         //add user data to posts
+                        var cnt2 = 0;
+                        
                         var posts = _.each(postsToShow.reverse(), function(post) {
                             // post.user = _.find(database.users, function(user) {
                             //     return user._id == post.userId;
                             // });
-                            return post;
+                            // return post;
+                            OpenFB.get('/' + post.id + '/likes', { limit: 300 })
+                                .success(function(likes) {
+                                    cnt2++;
+                                    post.likes = likes.data;
+                                    if (cnt2 == postsToShow.length) {
+                                        dfd.resolve({
+                                            posts: posts.slice(skip, skip + pageSize),
+                                            totalPages: totalPages
+                                        });
+                                    }
+
+                                })
+                                .error(function(data) {
+
+                                });
+
                         });
 
-                        dfd.resolve({
-                            posts: posts.slice(skip, skip + pageSize),
-                            totalPages: totalPages
-                        });
+
                     }
 
                 })
@@ -160,6 +176,17 @@ angular.module('your_app_name.app.services', [])
 
 
     };
+
+    this.sendLike = function(objID){
+      OpenFB.post('/' + objID + '/likes', { limit: 300 })
+                                .success(function(likes) {
+                                    
+
+                                })
+                                .error(function(data) {
+
+                                });
+    }
 })
 
 .service('ShopService', function($http, $q, _) {
