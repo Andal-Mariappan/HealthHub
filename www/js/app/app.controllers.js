@@ -85,31 +85,32 @@ angular.module('your_app_name.app.controllers', [])
     }
 
     // show add to cart popup on button click
-    $scope.showAddToCartPopup = function(product) {
+    $scope.showAddToCartPopup = function(product,product_price) {
         $scope.data = {};
         $scope.data.product = product;
+        $scope.data.product_price = product_price;
         $scope.data.productOption = 1;
         $scope.data.productQuantity = 1;
 
         var myPopup = $ionicPopup.show({
             cssClass: 'add-to-cart-popup',
             templateUrl: 'views/app/shop/partials/add-to-cart-popup.html',
-            title: 'Add to Cart',
+            title: 'Confirm Order',
             scope: $scope,
             buttons: [
                 { text: '', type: 'close-popup ion-ios-close-outline' }, {
-                    text: 'Add to cart',
+                    text: 'Confirm',
                     onTap: function(e) {
                         return $scope.data;
                     }
                 }
             ]
-        });
+        })
         myPopup.then(function(res) {
             if (res) {
-                $ionicLoading.show({ template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Adding to cart</p>', duration: 1000 });
-                ShopService.addProductToCart(res.product);
-                console.log('Item added to cart!', res);
+                $ionicLoading.show({ template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Loading</p>', duration: 1000 });
+                ShopService.addProductToCart(res.product,res.product_price);
+                console.log('Item added to cart!', res,res.product_price);
             } else {
                 console.log('Popup closed');
             }
@@ -153,13 +154,26 @@ angular.module('your_app_name.app.controllers', [])
 })
 
 
-.controller('FeedCtrl', function($scope, PostService) {
+.controller('FeedCtrl', function($scope, PostService, OpenFB) {
     $scope.posts = [];
     $scope.page = 1;
     $scope.totalPages = 1;
     $scope.chat2 = "gdfgdfg";
+
+    $scope.loadFeed = function() {
+
+        PostService.getFeedHostpital($scope.page)
+            .then(function(data) {
+                //We will update this value in every request because new posts can be created
+                $scope.totalPages = data.totalPages;
+                $scope.posts = $scope.posts.concat(data.posts);
+
+                $scope.$broadcast('scroll.infiniteScrollComplete');
+            });
+    }
+
     $scope.doRefresh = function() {
-        PostService.getFeed(1)
+        PostService.getFeedHostpital(1)
             .then(function(data) {
                 $scope.totalPages = data.totalPages;
                 $scope.posts = data.posts;
@@ -167,7 +181,6 @@ angular.module('your_app_name.app.controllers', [])
                 $scope.$broadcast('scroll.refreshComplete');
             });
     };
-
 
     $scope.getNewData = function() {
         //do something to load your new data here
@@ -181,11 +194,16 @@ angular.module('your_app_name.app.controllers', [])
         console.log('tttt');
     };
 
+    $scope.sendLike = function(objID){
+        
+        PostService.sendLike(objID);
+            
+    }
 
     $scope.loadMoreData = function() {
         $scope.page += 1;
 
-        PostService.getFeed($scope.page)
+        PostService.getFeedHostpital($scope.page)
             .then(function(data) {
                 //We will update this value in every request because new posts can be created
                 $scope.totalPages = data.totalPages;
@@ -270,7 +288,19 @@ angular.module('your_app_name.app.controllers', [])
     //$scope.paymentDetails;
 })
 
-.controller('SettingsCtrl', function($scope, $ionicModal) {
+.controller('SettingsCtrl', function($scope, $ionicModal, OpenFB, $state) {
+
+    $scope.signOut = function() {
+
+        OpenFB.revokePermissions().then(
+            function() {
+                $state.go('facebook-sign-in');
+            },
+            function() {
+                alert('OpenFB : Revoke Permissions Failed!ppppp');
+            });
+
+    }
 
     $ionicModal.fromTemplateUrl('views/app/legal/terms-of-service.html', {
         scope: $scope,

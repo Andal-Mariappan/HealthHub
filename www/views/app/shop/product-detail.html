@@ -5,7 +5,7 @@
     <ion-content overflow-scroll="true">
         <div class="product-card-content">
             <div class="item item-image">
-                <pre-img ratio="_2_1" helper-class="main-image">
+                <pre-img ratio="_1_1" helper-class="main-image">
                     <img ng-src="{{product.picture}}" spinner-on-load>
                 </pre-img>
             </div>
@@ -17,7 +17,7 @@
         </div> -->
                 <div class="row">
                     <div class="col-50" ng-repeat="product_price in product.product_prices">
-                        <p class="product-price" ng-click="showAddToCartPopup(product)">{{product_price.unit}} แพคเกจ {{product_price.price_aft_discount}}:แพคเกจ</p>
+                        <p class="product-price" ng-click="showAddToCartPopup(product,product_price)">{{product_price.unit}} แพคเกจ {{product_price.amount}} บาท</p>
                     </div>
                 </div>
                 <br>

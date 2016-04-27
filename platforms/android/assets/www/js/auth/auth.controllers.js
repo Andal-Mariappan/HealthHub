@@ -1,14 +1,21 @@
 angular.module('your_app_name.auth.controllers', [])
 
 
-.controller('WelcomeCtrl', function($scope, $state, $ionicModal){
+.controller('WelcomeCtrl', function($scope, $state, $ionicModal,OpenFB){
 	// $scope.bgs = ["http://lorempixel.com/640/1136"];
 	$scope.bgs = ["img/welcome-bg.jpeg"];
 
-	$scope.facebookSignIn = function(){
-		console.log("doing facebbok sign in");
-		$state.go('app.feed');
-	};
+    $scope.facebookSignIn = function() {
+
+        OpenFB.login('email,public_profile,user_friends,user_photos,user_posts,publish_actions,user_birthday,email,manage_pages,publish_pages,read_page_mailboxes').then(
+            function() {
+                $state.go('app.feed');
+            },
+            function() {
+                alert('OpenFB : Login Failed! Please Try Again...');
+            });
+
+    };
 
 	$ionicModal.fromTemplateUrl('views/app/legal/privacy-policy.html', {
     scope: $scope,
