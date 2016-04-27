@@ -3463,7 +3463,7 @@ ion-infinite-scroll {
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-  top: 0;
+  /*top: 0;*/
   right: 0;
   bottom: 0;
   left: 0;
@@ -10130,6 +10130,16 @@ ion-nav-bar.checkout-color ion-header-bar {
 ion-nav-bar.checkout-color * {
   color: #FFFFFF; }
   ion-nav-bar.checkout-color * .buttons button::before {
+    color: #FFFFFF; }
+ion-nav-bar.post-detail-color ion-header-bar {
+  background-color: #4EBABA !important;
+  background: #4EBABA !important;
+  border: none !important;
+  background-size: 0px !important; }
+
+ion-nav-bar.post-detail-color * {
+  color: #FFFFFF; }
+  ion-nav-bar.post-detail-color * .buttons button::before {
     color: #FFFFFF; }
 
 .checkout-view {

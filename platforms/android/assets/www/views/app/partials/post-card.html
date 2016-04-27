@@ -17,22 +17,39 @@
                     <img ng-src="{{post.picture}}" spinner-on-load>
                 </pre-img>
             </div>
-            <div class="row">
-                <div class=item-text-wrap></div>
-                <div class="col col-25">
-                    <p><a href="#" style="font-size: 15px;  "class="ion-thumbsup" class="subdued">{{post.feed_feel.length}} </a></p>
-                </div>
-                <div class="col col-25"></div>
-                <br>
+            <div class="row" style="margin-top:-20px;">
                 <div class="col col-50">
-                    <p><a href="#" class="subdued">5 Comments</a></p>
+                    <p ui-sref="app.postCardDetail({postId: post.id})" class="subdued">Like {{post.feed_feel.length}}</p>
                 </div>
+                <div class="col col-50" style="text-align:right">
+                    <p ui-sref="app.postCardDetail({postId: post.id})" class="subdued">{{post.feed_comment.length}} comment</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col col-30">
+                    <span style="font-size: 20px; " class="ion-thumbsup subdued">  </span>ถูกใจ
+                </div>
+                <div class="col col-30">
+                    <span style="font-size: 20px; " class="ion-ios-chatbubble subdued" ng-click="showDiv=true"></span> comment
+                </div>
+                <div class="col col-40">
+                    
+                </div>
+            </div>
+            <div ng-show ="showDiv">
+                <ion-footer-bar keyboard-attach class="bar-stable item-input-inset">
+                    <label class="item-input-wrapper">
+                        <input type="text" ng-model="chat2" />
+                    </label>
+                    <button class="button button-clear" ng-click="sendMessage()">
+                        Send
+                    </button>
+                </ion-footer-bar>
             </div>
             <div class="row">
                 <div class="col col-25"></div>
                 <div class="col col-25"></div>
                 <div class="col col-25"></div>
-
             </div>
         </div>
     </div>

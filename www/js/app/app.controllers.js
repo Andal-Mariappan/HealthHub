@@ -270,7 +270,19 @@ angular.module('your_app_name.app.controllers', [])
     //$scope.paymentDetails;
 })
 
-.controller('SettingsCtrl', function($scope, $ionicModal) {
+.controller('SettingsCtrl', function($scope, $ionicModal,OpenFB,$state) {
+
+    $scope.signOut = function() {
+
+        OpenFB.revokePermissions().then(
+            function() {
+                $state.go('facebook-sign-in');
+            },
+            function() {
+                alert('OpenFB : Revoke Permissions Failed!ppppp');
+            });
+
+    }
 
     $ionicModal.fromTemplateUrl('views/app/legal/terms-of-service.html', {
         scope: $scope,
