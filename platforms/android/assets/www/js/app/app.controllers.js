@@ -63,12 +63,26 @@ angular.module('your_app_name.app.controllers', [])
 })
 
 
+.controller('PostDetailCtrl', function($scope, $stateParams, PostService, $ionicPopup, $ionicLoading) {
+    var postId = $stateParams.postId;
+    console.log(postId);
+    PostService.getPost(postId).then(function(post) {
+        $scope.post = post;
+    });
+
+})
+
 .controller('ProductCtrl', function($scope, $stateParams, ShopService, $ionicPopup, $ionicLoading) {
     var productId = $stateParams.productId;
 
     ShopService.getProduct(productId).then(function(product) {
         $scope.product = product;
     });
+
+    $scope.var = 1;
+    $scope.click = function(num) {
+        $scope.var = num;
+    }
 
     // show add to cart popup on button click
     $scope.showAddToCartPopup = function(product) {
@@ -101,6 +115,41 @@ angular.module('your_app_name.app.controllers', [])
             }
         });
     };
+
+
+
+    // show add to rating on button click
+    $scope.showAddRate = function(product) {
+        $scope.data = {};
+        $scope.data.product = product;
+        $scope.data.productOption = 1;
+        $scope.data.productQuantity = 1;
+
+        var myPopup = $ionicPopup.show({
+            cssClass: 'add-to-cart-popup',
+            templateUrl: 'views/app/shop/partials/add-rating.html',
+            title: 'Write a Review',
+            scope: $scope,
+            buttons: [
+                { text: '', type: 'close-popup ion-ios-close-outline' }, {
+                    text: 'Send',
+                    onTap: function(e) {
+                        return $scope.data;
+                    }
+                }
+            ]
+        });
+        myPopup.then(function(res) {
+            if (res) {
+                $ionicLoading.show({ template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Sending</p>', duration: 1000 });
+                ShopService.addProductToCart(res.product);
+                console.log('Item added to cart!', res);
+            } else {
+                console.log('Popup closed');
+            }
+        });
+    };
+
 })
 
 
@@ -108,7 +157,7 @@ angular.module('your_app_name.app.controllers', [])
     $scope.posts = [];
     $scope.page = 1;
     $scope.totalPages = 1;
-
+    $scope.chat2 = "gdfgdfg";
     $scope.doRefresh = function() {
         PostService.getFeed(1)
             .then(function(data) {
@@ -119,10 +168,19 @@ angular.module('your_app_name.app.controllers', [])
             });
     };
 
+
     $scope.getNewData = function() {
         //do something to load your new data here
         $scope.$broadcast('scroll.refreshComplete');
     };
+    $scope.typeLike = function() {
+        //alert("");
+    };
+    $scope.sendMessage = function() {
+        $scope.chat2 = null;
+        console.log('tttt');
+    };
+
 
     $scope.loadMoreData = function() {
         $scope.page += 1;
@@ -142,6 +200,8 @@ angular.module('your_app_name.app.controllers', [])
     };
 
     $scope.doRefresh();
+
+
 
 })
 
@@ -164,6 +224,7 @@ angular.module('your_app_name.app.controllers', [])
         $scope.hospital = hospital;
 
     });
+
 })
 
 
@@ -187,7 +248,19 @@ angular.module('your_app_name.app.controllers', [])
 
     $scope.getSubtotal = function() {
         return _.reduce($scope.products, function(memo, product) {
-            return memo + product.price; }, 0);
+
+            return memo + product.price;
+        }, 0);
+    };
+    $scope.toggleGroup = function(group) {
+        if ($scope.isGroupShown(group)) {
+            $scope.shownGroup = null;
+        } else {
+            $scope.shownGroup = group;
+        }
+    };
+    $scope.isGroupShown = function(group) {
+        return $scope.shownGroup === group;
     };
 
 })
@@ -213,6 +286,7 @@ angular.module('your_app_name.app.controllers', [])
         $scope.privacy_policy_modal = modal;
     });
 
+
     $scope.showTerms = function() {
         $scope.terms_of_service_modal.show();
     };
@@ -221,8 +295,5 @@ angular.module('your_app_name.app.controllers', [])
         $scope.privacy_policy_modal.show();
     };
 
-})
 
-
-
-;
+});

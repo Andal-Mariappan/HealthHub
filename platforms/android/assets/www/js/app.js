@@ -185,6 +185,16 @@ angular.module('your_app_name', [
                 }
             }
         })
+        .state('app.postCardDetail', {
+            url: "/postCardDetail/:postId",
+            views: {
+                'menuContent': {
+                    templateUrl: "views/app/partials/post-card-detail.html",
+                    controller: 'PostDetailCtrl'
+                }
+            }
+        })
+
 
     //AUTH ROUTES
     .state('facebook-sign-in', {
@@ -215,6 +225,7 @@ angular.module('your_app_name', [
     $urlRouterProvider.otherwise('/facebook-sign-in');
     $ionicConfigProvider.tabs.position('bottom');
     // $urlRouterProvider.otherwise('/app/feed');
+
 })
 
 ;
