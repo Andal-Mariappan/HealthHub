@@ -19,17 +19,9 @@
             </div>
             <div class="row text-center" >
                 <div class="col col-50">
-<<<<<<< HEAD
                     <span ui-sref="app.postCardDetail({postId: post.id})" class="subdued ">Like {{post.likes.length}}</span>
-=======
-<<<<<<< HEAD
-                    <p ui-sref="app.postCardDetail({postId: post.id})" class="subdued">Like {{post.feed_feel.length}}</p>
-=======
-                    <p ui-sref="app.postCardDetail({postId: post.id})" class="subdued">Like {{post.likes.length}}</p>
->>>>>>> 73565fac565165835b52d7688e34226820d0c3a4
->>>>>>> e4c0df28f53a2f38c8a568777cd96482c232ddc5
                 </div>
-                <div class="col col-50 " ng-class="_likes == true ? 'likes-facebook' : 'unlikes-facebook'" ng-click="sendLike(post.id)">
+                <div class="col col-50 " ng-class="_likes == post.id || isLiked(post.likes) ? 'likes-facebook' : 'unlikes-facebook'" ng-click="sendLike(post)">
                     <span style="font-size: 20px; " class="ion-thumbsup subdued ">  </span>ถูกใจ
                 </div>
             </div>

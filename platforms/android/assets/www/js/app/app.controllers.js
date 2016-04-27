@@ -1,21 +1,27 @@
 angular.module('your_app_name.app.controllers', [])
 
 
-.controller('AppCtrl', function($scope, AuthService) {
+.controller('AppCtrl', function($scope, AuthService, OpenFB) {
 
     //this will represent our logged user
-    var user = {
-        about: "Design Lead of Project Fi. Love adventures, green tea, and the color pink.",
-        name: "Brynn Evans",
-        picture: "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg",
-        _id: 0,
-        followers: 345,
-        following: 58
-    };
+    // var user = {
+    //     about: "Design Lead of Project Fi. Love adventures, green tea, and the color pink.",
+    //     name: "Brynn Evans",
+    //     picture: "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg",
+    //     _id: 0,
+    //     followers: 345,
+    //     following: 58
+    // };
+
+    OpenFB.get('/me?fields=id,name,email,birthday,picture').success(function(user) {
+        user.picture = user.picture.data.url;
+        user._id = user.id;
+        AuthService.saveUser(user);
+        $scope.loggedUser = user;
+    });
 
     //save our logged user on the localStorage
-    AuthService.saveUser(user);
-    $scope.loggedUser = user;
+
 })
 
 
@@ -36,9 +42,9 @@ angular.module('your_app_name.app.controllers', [])
         $scope.posts = data;
     });
 
-    PostService.getUserDetails(userId).then(function(data) {
-        $scope.user = data;
-    });
+    // PostService.getUserDetails(userId).then(function(data) {
+    //     $scope.user = data;
+    // });
 
     PostService.getUserLikes(userId).then(function(data) {
         $scope.likes = data;
@@ -154,13 +160,11 @@ angular.module('your_app_name.app.controllers', [])
 })
 
 
-.controller('FeedCtrl', function($scope, PostService, OpenFB) {
+.controller('FeedCtrl', function($scope, PostService, OpenFB, AuthService) {
     $scope.posts = [];
     $scope.page = 1;
     $scope.totalPages = 1;
     $scope.chat2 = "gdfgdfg";
-<<<<<<< HEAD
-=======
 
     $scope.loadFeed = function() {
 
@@ -174,7 +178,6 @@ angular.module('your_app_name.app.controllers', [])
             });
     }
 
->>>>>>> 73565fac565165835b52d7688e34226820d0c3a4
     $scope.doRefresh = function() {
         PostService.getFeedHostpital(1)
             .then(function(data) {
@@ -185,7 +188,6 @@ angular.module('your_app_name.app.controllers', [])
             });
     };
 
-
     $scope.getNewData = function() {
         //do something to load your new data here
         $scope.$broadcast('scroll.refreshComplete');
@@ -195,10 +197,23 @@ angular.module('your_app_name.app.controllers', [])
         console.log('tttt');
     };
 
-    $scope.sendLike = function(objID) {
+    $scope.sendLike = function(obj) {
 
-        PostService.sendLike(objID);
-        $scope._likes = !$scope._likes;
+        PostService.sendLike(obj.id);
+        $scope._likes = obj.id;
+        //$scope.doRefresh();
+    }
+
+    $scope.isLiked = function(likes) {
+        var _user = AuthService.getLoggedUser();
+        var like = _.filter(likes, function(like) {
+            return like.name == _user.name;
+        });
+        //return like.length > 0;
+        if (like.length > 0) {
+            return true;
+        }
+        return false;
     }
 
     $scope.loadMoreData = function() {

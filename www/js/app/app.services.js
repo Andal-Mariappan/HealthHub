@@ -80,29 +80,22 @@ angular.module('your_app_name.app.services', [])
         return dfd.promise;
     };
 
-    this.getUserLikes = function(userId) {
+
+
+
+
+
+    this.getUserLikes = function(objID) {
         var dfd = $q.defer();
 
-        $http.get('database.json').success(function(database) {
-            //get user likes
-            //we will get all the posts
-            var slicedLikes = database.posts.slice(0, 4);
-            // var sortedLikes =  _.sortBy(database.posts, function(post){ return new Date(post.date); });
-            var sortedLikes = _.sortBy(slicedLikes, function(post) {
-                return new Date(post.date);
+        OpenFB.get('/' + objID + '/likes', { limit: 300 })
+            .success(function(likes) {
+                dfd.resolve(likes.data);
+
+            })
+            .error(function(data) {
+
             });
-
-            //add user data to posts
-            var likes = _.each(sortedLikes.reverse(), function(post) {
-                post.user = _.find(database.users, function(user) {
-                    return user._id == post.userId;
-                });
-                return post;
-            });
-
-            dfd.resolve(likes);
-
-        });
 
         return dfd.promise;
 

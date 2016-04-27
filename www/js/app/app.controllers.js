@@ -201,6 +201,10 @@ angular.module('your_app_name.app.controllers', [])
 
         PostService.sendLike(obj.id);
         $scope._likes = obj.id;
+        PostService.getUserLikes(obj.id)
+            .then(function(data) {
+                obj.likes = data;
+            });
         //$scope.doRefresh();
     }
 

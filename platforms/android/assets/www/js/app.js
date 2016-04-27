@@ -253,9 +253,6 @@ angular.module('your_app_name', [
 
 })
 
-<<<<<<< HEAD
-;
-=======
 ;
 
 
@@ -493,4 +490,3 @@ function oauthCallback(url) {
         OpenFB.oauthCallback(url);
     });
 }
->>>>>>> 73565fac565165835b52d7688e34226820d0c3a4
