@@ -14,7 +14,7 @@ angular.module('your_app_name.app.services', [])
 
 })
 
-.service('PostService', function($http, $q,OpenFB ) {
+.service('PostService', function($http, $q, OpenFB) {
 
     this.getUserDetails = function(userId) {
         var dfd = $q.defer();
@@ -108,110 +108,57 @@ angular.module('your_app_name.app.services', [])
 
     };
 
-    this.getFeed = function(page) {
-
+    this.getFeedHostpital = function(page) {
         var pageSize = 5, // set your page size, which is number of records per page
             skip = pageSize * (page - 1),
             totalPosts = 1,
             totalPages = 1,
             dfd = $q.defer();
+        var hospital_ID = [256097964403278, 98150133139,180515832148454];
+        var xx = [];
+        var cnt = 0;
+        for (var i = hospital_ID.length - 1; i >= 0; i--) {
+            hospital_ID[i]
+            OpenFB.get('/' + hospital_ID[i] + '/posts?fields=full_picture,message,updated_time,from,picture', { limit: 20 })
+                .success(function(result) {
+                    xx = xx.concat(result.data)
+                    cnt++;
+                    if (cnt == hospital_ID.length) {
+                        totalPosts = xx.length;
+                        totalPages = totalPosts / pageSize;
+                        var sortedPosts = _.sortBy(xx, function(post) {
+                                return new Date(post.updated_time);
+                            }),
+                        postsToShow = sortedPosts;
 
-        $http.get('database.json').success(function(database) {
+                        //add user data to posts
+                        var posts = _.each(postsToShow.reverse(), function(post) {
+                            // post.user = _.find(database.users, function(user) {
+                            //     return user._id == post.userId;
+                            // });
+                            return post;
+                        });
 
-            totalPosts = database.posts.length;
-            totalPages = totalPosts / pageSize;
+                        dfd.resolve({
+                            posts: posts.slice(skip, skip + pageSize),
+                            totalPages: totalPages
+                        });
+                    }
 
-            var sortedPosts = _.sortBy(database.posts, function(post) {
-                    return new Date(post.date);
-                }),
-                postsToShow = sortedPosts.slice(skip, skip + pageSize);
+                })
+                .error(function(data) {
 
-            //add user data to posts
-            var posts = _.each(postsToShow.reverse(), function(post) {
-                post.user = _.find(database.users, function(user) {
-                    return user._id == post.userId;
                 });
-                return post;
-            });
 
-            dfd.resolve({
-                posts: posts,
-                totalPages: totalPages
-            });
-        });
-
-        return dfd.promise;
-    };
-    this.getFeedHostpital = function(page) {
-            var pageSize = 5, // set your page size, which is number of records per page
-            skip = pageSize * (page - 1),
-            totalPosts = 1,
-            totalPages = 1,
-            dfd = $q.defer();
-            var phayathai_ID = 256097964403278;
-
-        // $http.get('database.json').success(function(database) {
-
-        //     totalPosts = database.posts.length;
-        //     totalPages = totalPosts / pageSize;
-
-        //     var sortedPosts = _.sortBy(database.posts, function(post) {
-        //             return new Date(post.date);
-        //         }),
-        //         postsToShow = sortedPosts.slice(skip, skip + pageSize);
-
-        //     //add user data to posts
-        //     var posts = _.each(postsToShow.reverse(), function(post) {
-        //         post.user = _.find(database.users, function(user) {
-        //             return user._id == post.userId;
-        //         });
-        //         return post;
-        //     });
-
-        //     dfd.resolve({
-        //         posts: posts,
-        //         totalPages: totalPages
-        //     });
-        // });
-        OpenFB.get('/' + phayathai_ID + '/posts?fields=full_picture,message,updated_time,from,picture', { limit: 20 })
-            .success(function(result) {
-
-                //$scope.item = result.data;;
-
-                // Used with pull-to-refresh
-                //$scope.$broadcast('scroll.refreshComplete');
+        };
 
 
-            totalPosts =  result.data.length;
-            totalPages = totalPosts / pageSize;
 
-            var sortedPosts = _.sortBy(result.data, function(post) {
-                    return new Date(post.updated_time);
-                }),
-            postsToShow = sortedPosts.slice(skip, skip + pageSize);
-
-            //add user data to posts
-            var posts = _.each(postsToShow.reverse(), function(post) {
-                // post.user = _.find(database.users, function(user) {
-                //     return user._id == post.userId;
-                // });
-                return post;
-            });
-
-              dfd.resolve({
-                  posts: posts,
-                  totalPages: totalPages
-              });
-            })
-            .error(function(data) {
-                $scope.hide();
-                alert(data.error.message);
-            });
         return dfd.promise;
 
         //var items;
-        
-        
+
+
     };
 })
 
