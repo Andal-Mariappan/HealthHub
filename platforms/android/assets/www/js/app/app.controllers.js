@@ -153,13 +153,26 @@ angular.module('your_app_name.app.controllers', [])
 })
 
 
-.controller('FeedCtrl', function($scope, PostService) {
+.controller('FeedCtrl', function($scope, PostService, OpenFB) {
     $scope.posts = [];
     $scope.page = 1;
     $scope.totalPages = 1;
     $scope.chat2 = "gdfgdfg";
+
+    $scope.loadFeed = function() {
+
+        PostService.getFeedHostpital($scope.page)
+            .then(function(data) {
+                //We will update this value in every request because new posts can be created
+                $scope.totalPages = data.totalPages;
+                $scope.posts = $scope.posts.concat(data.posts);
+
+                $scope.$broadcast('scroll.infiniteScrollComplete');
+            });
+    }
+
     $scope.doRefresh = function() {
-        PostService.getFeed(1)
+        PostService.getFeedHostpital(1)
             .then(function(data) {
                 $scope.totalPages = data.totalPages;
                 $scope.posts = data.posts;
@@ -167,7 +180,6 @@ angular.module('your_app_name.app.controllers', [])
                 $scope.$broadcast('scroll.refreshComplete');
             });
     };
-
 
     $scope.getNewData = function() {
         //do something to load your new data here
@@ -185,7 +197,7 @@ angular.module('your_app_name.app.controllers', [])
     $scope.loadMoreData = function() {
         $scope.page += 1;
 
-        PostService.getFeed($scope.page)
+        PostService.getFeedHostpital($scope.page)
             .then(function(data) {
                 //We will update this value in every request because new posts can be created
                 $scope.totalPages = data.totalPages;
@@ -270,7 +282,19 @@ angular.module('your_app_name.app.controllers', [])
     //$scope.paymentDetails;
 })
 
-.controller('SettingsCtrl', function($scope, $ionicModal) {
+.controller('SettingsCtrl', function($scope, $ionicModal, OpenFB, $state) {
+
+    $scope.signOut = function() {
+
+        OpenFB.revokePermissions().then(
+            function() {
+                $state.go('facebook-sign-in');
+            },
+            function() {
+                alert('OpenFB : Revoke Permissions Failed!ppppp');
+            });
+
+    }
 
     $ionicModal.fromTemplateUrl('views/app/legal/terms-of-service.html', {
         scope: $scope,
