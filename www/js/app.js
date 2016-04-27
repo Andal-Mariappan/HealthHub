@@ -147,6 +147,16 @@ angular.module('your_app_name', [
         }
     })
 
+    .state('app.radio-buttom-cart', {
+        url: "/radio-buttom-cart",
+        views: {
+            'menuContent': {
+                templateUrl: "views/app/shop/radio-buttom-cart.html",
+                controller: 'ShoppingCartCtrl'
+            }
+        }
+    })
+
     .state('app.shipping-address', {
         url: "/shipping-address",
         views: {

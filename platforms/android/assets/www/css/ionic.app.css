@@ -3463,7 +3463,7 @@ ion-infinite-scroll {
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
-  top: 0;
+  /*top: 0;*/
   right: 0;
   bottom: 0;
   left: 0;
@@ -7099,7 +7099,7 @@ textarea:-ms-input-placeholder {
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-  color: white;
+  color: #BBBBBB;
   text-indent: 0; }
 
 input[disabled],
@@ -7550,7 +7550,8 @@ input:checked + .checkbox-icon:after {
   padding-right: 64px; }
 
 .item-radio .radio-icon {
-  /* checkmark icon will be hidden by default */
+  /* checkmark ic
+  top: 0;on will be hidden by default */
   position: absolute;
   top: 0;
   right: 0;
@@ -9848,6 +9849,17 @@ ion-nav-bar.cart-color * {
   ion-nav-bar.cart-color * .buttons button::before {
     color: #FFFFFF; }
 
+ion-nav-bar.radio-buttom-cart-color ion-header-bar {
+  background-color: #FF9D4C !important;
+  background: #FF9D4C !important;
+  border: none !important;
+  background-size: 0px !important; }
+
+ion-nav-bar.radio-buttom-cart-color * {
+  color: #FFFFFF; }
+  ion-nav-bar.radio-buttom-cart-color * .buttons button::before {
+    color: #FFFFFF; }
+
 .cart-view {
   background-color: #EEE;
   color: #444; }
@@ -10131,6 +10143,16 @@ ion-nav-bar.checkout-color * {
   color: #FFFFFF; }
   ion-nav-bar.checkout-color * .buttons button::before {
     color: #FFFFFF; }
+ion-nav-bar.post-detail-color ion-header-bar {
+  background-color: #4EBABA !important;
+  background: #4EBABA !important;
+  border: none !important;
+  background-size: 0px !important; }
+
+ion-nav-bar.post-detail-color * {
+  color: #FFFFFF; }
+  ion-nav-bar.post-detail-color * .buttons button::before {
+    color: #FFFFFF; }
 
 .checkout-view {
   background-color: #EEE;
@@ -10166,3 +10188,11 @@ ion-nav-bar.checkout-color * {
     font-size: 14px; }
   .checkout-view .submit-order-btn {
     font-weight: 500; }
+.item-radio input:checked + .radio-content .item-content {
+    background: #f7f7f7;
+
+}
+.item-radio input:checked + .radio-content .radio-icon {
+    visibility: visible;
+}
+

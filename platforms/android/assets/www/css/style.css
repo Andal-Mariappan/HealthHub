@@ -42,6 +42,54 @@
 }
 
 .img-hospital {
+    height: 112px;
+}
+
+ul.rating li {
+    display: inline;
+    border: 0px;
+    background: none;
+    padding: 5px 10px;
+}
+
+ul.rating li i {
+    font-size: 30px;
+}
+
+.btn-orange {
+    background-color: #ff9d4c;
+    color: white;
+    font-style: bold;
+    border-radius: 4px;
+    min-height: 34px;
+    border: none;
+}
+
+.btn-outline {
+    float: right;
+    background-color: #f3b582;
+    color: #FFF;
+    padding: 2px 8px;
+    min-height: 20px;
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 12px;
+    border: none;
+}
+
+.btn-full {
+    float: right;
+    background-color: #ff9d4c;
+    color: #FFF;
+    padding: 2px 8px;
+    border-radius: 4px;
+    min-height: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    border: none;
+}
+
+.img-hospital {
     height: 114px;
 }
 
@@ -59,3 +107,10 @@
     padding-left: 72px;
     min-height: 72px;
 }
+.button-orang-appointment{
+    width:100% ;
+    background-color:#FF9D4C;
+     border:none;
+    color:#ffffff; 
+}
+
