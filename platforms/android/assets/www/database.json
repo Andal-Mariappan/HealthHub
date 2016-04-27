@@ -4,7 +4,7 @@
             "id": 1,
             "price": 650000,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 650000,
             "amount": 650000
         }],
@@ -16,19 +16,20 @@
         "start_date": "20/3/16",
         "expire_date": "31/12/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆๆๆๆ",
-            "rate": ""
+            "rate": 5
         }]
     },{
         "product_prices": [{
             "id": 1,
             "price": 220000,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 220000,
             "amount": 220000
         }],
@@ -40,19 +41,20 @@
         "start_date": "1/4/16",
         "expire_date": "31/12/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆๆๆๆ",
-            "rate": ""
+            "rate": 5
         }]
     },{
         "product_prices": [{
             "id": 1,
             "price": 37000,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 37000,
             "amount": 37000
         }],
@@ -64,19 +66,20 @@
         "start_date": "20/4/16",
         "expire_date": "31/12/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆๆๆๆ",
-            "rate": ""
+            "rate": 5
         }]
     },{
         "product_prices": [{
             "id": 1,
             "price": 37000,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 37000,
             "amount": 37000
         }],
@@ -88,19 +91,20 @@
         "start_date": "20/4/16",
         "expire_date": "31/12/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
             "id": "1",
             "name": "John",
             "desc": "บริการดีมากๆๆๆๆ",
-            "rate": ""
+            "rate": 5
         }]
     },{
         "product_prices": [{
             "id": 1,
             "price": 129000,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 129000,
             "amount": 129000
         }],
@@ -112,19 +116,20 @@
         "start_date": "1/3/16",
         "expire_date": "30/9/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆๆๆๆ",
-            "rate": ""
+            "rate": 5
         }]
     },{
       "product_prices": [{
             "id": 1,
             "price": 55000,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 55000,
             "amount": 55000
         }],
@@ -136,19 +141,20 @@
         "start_date": "1/3/16",
         "expire_date": "30/6/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆๆๆๆ",
-            "rate": ""
+            "rate": 5
         }]
     },{
         "product_prices": [{
             "id": 1,
             "price": 1200,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 1200,
             "amount": 1200
         }],
@@ -160,19 +166,20 @@
         "start_date": "1/3/16",
         "expire_date": "31/12/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆๆๆๆ",
-            "rate": ""
+            "rate": 5
         }]
     },{
         "product_prices": [{
             "id": 1,
             "price": 1900,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 1900,
             "amount": 1900
         }],
@@ -184,21 +191,24 @@
         "start_date": "1/3/16",
         "expire_date": "31/10/16",
         "create_date": 1429935138465,
+        "rate": 0,
         "hospital": "โรงพยาบาลกรุงเทพ",
-        "product_review": [{
-            "id": "1",
-            "name": "John",
-            "desc": "บริการดีมากๆๆๆๆ",
-            "rate": ""
-        }]
+        "product_review": []
     },{
         "product_prices": [{
             "id": 1,
             "price": 2700,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 2700,
             "amount": 2700
+        },{
+            "id": 1,
+            "price": 2700,
+            "unit": 1,
+            "discount": 10,
+            "price_aft_discount": 2430,
+            "amount": 4860
         }],
         "description": "บริการฉีดวัคซีนไข้สมองอักเสบเจอี",
         "title": "ชุดวัคซีนเด็กทารก B",
@@ -208,19 +218,20 @@
         "start_date": "1/2/16",
         "expire_date": "31/10/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆๆๆๆ",
-            "rate": ""
+            "rate": 5
         }]
     },{
         "product_prices": [{
             "id": 1,
             "price": 2000,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 2000,
             "amount": 2000
         }],
@@ -232,19 +243,20 @@
         "start_date": "1/2/16",
         "expire_date": "31/10/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆๆๆๆ",
-            "rate": ""
+            "rate": 5
         }]
     },{
         "product_prices": [{
             "id": 1,
             "price": 400,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 400,
             "amount": 400
         }],
@@ -256,19 +268,20 @@
         "start_date": "1/2/16",
         "expire_date": "31/5/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆๆๆๆ",
-            "rate": ""
+            "rate": 5
         }]
     },{
         "product_prices": [{
             "id": 1,
             "price": 400,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 400,
             "amount": 400
         }],
@@ -280,26 +293,27 @@
         "start_date": "1/2/16",
         "expire_date": "31/5/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆๆๆๆ",
-            "rate": ""
+            "rate": 5
         }]
     },{
         "product_prices": [{
             "id": 1,
             "price": 4000,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 4000,
             "amount": 4000
         }, {
             "id": 2,
             "price": 4000,
             "unit": 2,
-            "discount": "10%",
+            "discount": 10,
             "price_aft_discount": 3600,
             "amount": 7200
         }],
@@ -311,26 +325,27 @@
         "start_date": "12/2/16",
         "expire_date": "31/5/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆๆๆๆ",
-            "rate": ""
+            "rate": 5
         }]
     },{
         "product_prices": [{
             "id": 1,
             "price": 2000,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 2000,
             "amount": 2000
         }, {
             "id": 2,
             "price": 2000,
             "unit": 2,
-            "discount": "10%",
+            "discount": 10,
             "price_aft_discount": 1800,
             "amount": 3600
         }],
@@ -342,48 +357,50 @@
         "start_date": "12/2/16",
         "expire_date": "31/7/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆๆๆๆ",
-            "rate": ""
+            "rate": 5
         }]
     },{
         "product_prices": [{
             "id": 1,
             "price": 4000,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 4000,
             "amount": 4000
         }, {
             "id": 2,
             "price": 4000,
             "unit": 2,
-            "discount": "10%",
+            "discount": 10,
             "price_aft_discount": 3600,
             "amount": 7200
         }],
         "description": "ตรวจร่างกายโดยแพทย์, ตรวจหามะเร็งเต้านม",
-        "title": "ตรวจหามะเร็เต้านม",
+        "title": "ตรวจหามะเร็งเต้านม",
         "picture": "img/sample_images/products/product3.jpg",
         "_id": 4,
         "type": 1,
         "start_date": "12/2/16",
         "expire_date": "31/7/16",
         "create_date": 1429935138465,
+        "rate": 4,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆๆๆๆ",
-            "rate": ""
+            "rate": 5
         },{
-            "id": "2",
+            "id": 2,
             "name": "Mary",
             "desc": "ดำเนินการช้าไปนิดนึงนะคะ",
-            "rate": ""
+            "rate": 3
         }]
     },{
         "product_prices": [{
@@ -409,12 +426,13 @@
         "start_date": "22/4/16",
         "expire_date": "30/8/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆ",
-            "rate": ""
+            "rate": 5
         }]
     }, {
         "product_prices": [{
@@ -440,12 +458,13 @@
         "start_date": "22/4/16",
         "expire_date": "30/8/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆ",
-            "rate": ""
+            "rate": 5
         }]
     }, {
         "related_products": [{
@@ -460,7 +479,7 @@
                 "id": 2,
                 "price": 5000,
                 "unit": 2,
-                "discount": "10%",
+                "discount": 10,
                 "price_aft_discount": 4500,
                 "amount": 9000
             }],
@@ -472,26 +491,27 @@
             "start_date": "22/4/16",
             "expire_date": "30/8/16",
             "create_date": 1429935138465,
+            "rate": 5,
             "hospital": "โรงพยาบาลกรุงเทพ",
             "product_review": [{
-                "id": "1",
+                "id": 1,
                 "name": "John",
                 "desc": "บริการดีมากๆ",
-                "rate": ""
+                "rate": 5
             }]
         }, {
         "product_prices": [{
             "id": 1,
             "price": 2000,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 2000,
             "amount": 2000
         }, {
             "id": 2,
             "price": 2000,
             "unit": 2,
-            "discount": "10%",
+            "discount": 10,
             "price_aft_discount": 1800,
             "amount": 3600
         }],
@@ -503,26 +523,27 @@
         "start_date": "12/2/16",
         "expire_date": "31/7/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆๆๆๆ",
-            "rate": ""
+            "rate": 5
         }]
     },{
         "product_prices": [{
             "id": 1,
             "price": 4000,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 4000,
             "amount": 4000
         }, {
             "id": 2,
             "price": 4000,
             "unit": 2,
-            "discount": "10%",
+            "discount": 10,
             "price_aft_discount": 3600,
             "amount": 7200
         }],
@@ -534,31 +555,32 @@
         "start_date": "12/2/16",
         "expire_date": "31/7/16",
         "create_date": 1429935138465,
+        "rate": 4,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆๆๆๆ",
-            "rate": ""
+            "rate": 5
         },{
-            "id": "2",
+            "id": 2,
             "name": "Mary",
             "desc": "ดำเนินการช้าไปนิดนึงนะคะ",
-            "rate": ""
+            "rate": 3
         }]
     },{
         "product_prices": [{
             "id": 1,
             "price": 5000,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 5000,
             "amount": 5000
         }, {
             "id": 2,
             "price": 5000,
             "unit": 2,
-            "discount": "10%",
+            "discount": 10,
             "price_aft_discount": 4500,
             "amount": 9000
         }],
@@ -570,26 +592,27 @@
         "start_date": "22/4/16",
         "expire_date": "30/8/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆ",
-            "rate": ""
+            "rate": 5
         }]
     }, {
         "product_prices": [{
             "id": 1,
             "price": 3000,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 3000,
             "amount": 3000
         }, {
             "id": 2,
             "price": 3000,
             "unit": 2,
-            "discount": "10%",
+            "discount": 10,
             "price_aft_discount": 2700,
             "amount": 5400
         }],
@@ -601,26 +624,27 @@
         "start_date": "22/4/16",
         "expire_date": "30/8/16",
         "create_date": 1429935138465,
+        "rate": 5,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆ",
-            "rate": ""
+            "rate": 5
         }]
     }],
         "product_prices": [{
             "id": 1,
             "price": 5000,
             "unit": 1,
-            "discount": "",
+            "discount": 0,
             "price_aft_discount": 5000,
             "amount": 5000
         }, {
             "id": 2,
             "price": 5000,
             "unit": 2,
-            "discount": "10%",
+            "discount": 10,
             "price_aft_discount": 4500,
             "amount": 9000
         }],
@@ -635,12 +659,12 @@
         "rate": 4,
         "hospital": "โรงพยาบาลกรุงเทพ",
         "product_review": [{
-            "id": "1",
+            "id": 1,
             "name": "John",
             "desc": "บริการดีมากๆ",
             "rate": 5
         },{
-            "id": "2",
+            "id": 2,
             "name": "Maria",
             "desc": "บริการดีมากค่ะ",
             "rate": 4

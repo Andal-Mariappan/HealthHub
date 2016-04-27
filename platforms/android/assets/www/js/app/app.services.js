@@ -134,13 +134,13 @@ angular.module('your_app_name.app.services', [])
 
                         //add user data to posts
                         var cnt2 = 0;
-                        
+
                         var posts = _.each(postsToShow.reverse(), function(post) {
                             // post.user = _.find(database.users, function(user) {
                             //     return user._id == post.userId;
                             // });
                             // return post;
-                            OpenFB.get('/' + post.id + '/likes', { limit: 1000 })
+                            OpenFB.get('/' + post.id + '/likes', { limit: 300 })
                                 .success(function(likes) {
                                     cnt2++;
                                     post.likes = likes.data;
@@ -176,6 +176,17 @@ angular.module('your_app_name.app.services', [])
 
 
     };
+
+    this.sendLike = function(objID) {
+        OpenFB.post('/' + objID + '/likes', { limit: 200 })
+            .success(function(likes) {
+
+
+            })
+            .error(function(data) {
+
+            });
+    }
 })
 
 .service('ShopService', function($http, $q, _) {

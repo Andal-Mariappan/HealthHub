@@ -9,22 +9,22 @@
                 <!-- We need a wrapper with width set for the preload image directive -->
                 <div class="user-image-outer">
                   <pre-img ratio="_1_1" helper-class="rounded-image">
-                    <img class="user-image" ng-src="{{user.picture}}" spinner-on-load>
+                    <img class="user-image" ng-src="{{loggedUser.picture}}" spinner-on-load>
                 	</pre-img>
                 </div>
-                <h2 class="user-name">{{user.name}}</h2>
-                <p class="user-resume">
+                <h2 class="user-name">{{loggedUser.name}}</h2>
+                <!-- <p class="user-resume">
                   <b>{{user.followers}}</b> Followers &nbsp;&nbsp;<b>{{user.following}}</b> Following
-                </p>
+                </p> -->
               </div>
             </div>
           </ion-slide>
           <ion-slide>
             <div class="row slide-content">
               <div class="col col-center user-data">
-                <p class="user-resume">
+                <!-- <p class="user-resume">
                   {{user.about}}
-                </p>
+                </p> -->
               </div>
             </div>
           </ion-slide>
@@ -54,14 +54,14 @@
         </div>
         <div class="row split-actions">
           <div class="col user-interaction">
-            <p>
+           <!--  <p>
               <a class="user-interaction-tab" ng-class="{active: ('app.profile.posts' | includedByState)}" nav-transition="none" ng-click="getUserPosts(user._id)" role="tab"><b>{{user.followers}}</b> Posts</a>
-            </p>
+            </p> -->
           </div>
           <div class="col user-interaction">
-            <p>
+            <!-- <p>
               <a class="user-interaction-tab" ng-class="{active: ('app.profile.likes' | includedByState)}" nav-transition="none" ng-click="getUserLikes( user._id)" role="tab"><b>{{user.following}}</b> Likes</a>
-            </p>
+            </p> -->
           </div>
         </div>
       </div>

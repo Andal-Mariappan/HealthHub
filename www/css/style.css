@@ -107,3 +107,9 @@ ul.rating li i {
     padding-left: 72px;
     min-height: 72px;
 }
+.likes-facebook{
+    color: #FF33FF;
+}
+.unlikes-facebook{
+    color: #666666;
+}

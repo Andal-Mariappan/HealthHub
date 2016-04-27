@@ -19,10 +19,10 @@
             </div>
             <div class="row text-center" >
                 <div class="col col-50">
-                    <span ui-sref="app.postCardDetail({postId: post.id})" class="subdued">Like {{post.likes.length}}</span>
+                    <span ui-sref="app.postCardDetail({postId: post.id})" class="subdued ">Like {{post.likes.length}}</span>
                 </div>
-                <div class="col col-50" ng-click="sendLike(post.id)">
-                    <span style="font-size: 20px; " class="ion-thumbsup subdued">  </span>ถูกใจ
+                <div class="col col-50 " ng-class="_likes == post.id || isLiked(post.likes) ? 'likes-facebook' : 'unlikes-facebook'" ng-click="sendLike(post)">
+                    <span style="font-size: 20px; " class="ion-thumbsup subdued ">  </span>ถูกใจ
                 </div>
             </div>
         </div>

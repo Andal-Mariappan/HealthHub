@@ -1,21 +1,27 @@
 angular.module('your_app_name.app.controllers', [])
 
 
-.controller('AppCtrl', function($scope, AuthService) {
+.controller('AppCtrl', function($scope, AuthService, OpenFB) {
 
     //this will represent our logged user
-    var user = {
-        about: "Design Lead of Project Fi. Love adventures, green tea, and the color pink.",
-        name: "Brynn Evans",
-        picture: "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg",
-        _id: 0,
-        followers: 345,
-        following: 58
-    };
+    // var user = {
+    //     about: "Design Lead of Project Fi. Love adventures, green tea, and the color pink.",
+    //     name: "Brynn Evans",
+    //     picture: "https://s3.amazonaws.com/uifaces/faces/twitter/brynn/128.jpg",
+    //     _id: 0,
+    //     followers: 345,
+    //     following: 58
+    // };
+
+    OpenFB.get('/me?fields=id,name,email,birthday,picture').success(function(user) {
+        user.picture = user.picture.data.url;
+        user._id = user.id;
+        AuthService.saveUser(user);
+        $scope.loggedUser = user;
+    });
 
     //save our logged user on the localStorage
-    AuthService.saveUser(user);
-    $scope.loggedUser = user;
+
 })
 
 
@@ -36,9 +42,9 @@ angular.module('your_app_name.app.controllers', [])
         $scope.posts = data;
     });
 
-    PostService.getUserDetails(userId).then(function(data) {
-        $scope.user = data;
-    });
+    // PostService.getUserDetails(userId).then(function(data) {
+    //     $scope.user = data;
+    // });
 
     PostService.getUserLikes(userId).then(function(data) {
         $scope.likes = data;
@@ -85,7 +91,7 @@ angular.module('your_app_name.app.controllers', [])
     }
 
     // show add to cart popup on button click
-    $scope.showAddToCartPopup = function(product,product_price) {
+    $scope.showAddToCartPopup = function(product, product_price) {
         $scope.data = {};
         $scope.data.product = product;
         $scope.data.product_price = product_price;
@@ -109,8 +115,8 @@ angular.module('your_app_name.app.controllers', [])
         myPopup.then(function(res) {
             if (res) {
                 $ionicLoading.show({ template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Loading</p>', duration: 1000 });
-                ShopService.addProductToCart(res.product,res.product_price);
-                console.log('Item added to cart!', res,res.product_price);
+                ShopService.addProductToCart(res.product, res.product_price);
+                console.log('Item added to cart!', res, res.product_price);
             } else {
                 console.log('Popup closed');
             }
@@ -154,7 +160,7 @@ angular.module('your_app_name.app.controllers', [])
 })
 
 
-.controller('FeedCtrl', function($scope, PostService, OpenFB) {
+.controller('FeedCtrl', function($scope, PostService, OpenFB, AuthService) {
     $scope.posts = [];
     $scope.page = 1;
     $scope.totalPages = 1;
@@ -186,18 +192,28 @@ angular.module('your_app_name.app.controllers', [])
         //do something to load your new data here
         $scope.$broadcast('scroll.refreshComplete');
     };
-    $scope.typeLike = function() {
-        //alert("");
-    };
     $scope.sendMessage = function() {
         $scope.chat2 = null;
         console.log('tttt');
     };
 
-    $scope.sendLike = function(objID){
-        
-        PostService.sendLike(objID);
-            
+    $scope.sendLike = function(obj) {
+
+        PostService.sendLike(obj.id);
+        $scope._likes = obj.id;
+        //$scope.doRefresh();
+    }
+
+    $scope.isLiked = function(likes) {
+        var _user = AuthService.getLoggedUser();
+        var like = _.filter(likes, function(like) {
+            return like.name == _user.name;
+        });
+        //return like.length > 0;
+        if (like.length > 0) {
+            return true;
+        }
+        return false;
     }
 
     $scope.loadMoreData = function() {
