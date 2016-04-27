@@ -42,38 +42,18 @@
                             </div>
                         </div>
                     </div>
-                    <ion-item class="item-accordion" ng-show="isGroupShown(product)">
-                        {{product.title}}
-                        <!-- <div class="row">
+                    <ion-item class="item-accordion" ng-show="isGroupShown(product)" ui-sref="app.radio-buttom-cart">
+                        <div class="row" style="margin-left: -10px;">
                             <div class="col">
-                                <p>เลขที่ : </p>
+                                <p>No. : </p>
                             </div>
                             <div class="col">
-                                <p>วันที่ : </p>
+                                <p>Date : </p>
                             </div>
-                             <div class="col">
-                                <p>เวลา : </p>
-                            </div>                           
-                            <div class="col">
-                                <p>ชื่อแพ็คเกจ : </p>
-                            </div>
-                            </div> -->
-                            <div class="row">
-  <div class="col"><p>เลขที่ : </p></div>
-  <div class="col"> <p>วันที่ : </p></div>
-  <div class="col"> <p>เวลา : </p></div>
-</div>
-
-<div class="row">
-  <div class="col col-75"><p>ชื่อแพ็คเกจ : </p></div>
-  
-</div>
-
-<div class="row">
-  <div class="col"><p>ชื่อ - นามสกุล : </p></div>
-
-</div>
                         </div>
+                        <p>Package : {{product.title}}</p>
+                        <p>Name : </p>
+                        <p>Tel. : </p>
                     </ion-item>
                 </div>
             </div>

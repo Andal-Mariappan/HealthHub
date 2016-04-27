@@ -162,6 +162,16 @@ angular.module('your_app_name', [
         }
     })
 
+    .state('app.radio-buttom-cart', {
+        url: "/radio-buttom-cart",
+        views: {
+            'menuContent': {
+                templateUrl: "views/app/shop/radio-buttom-cart.html",
+                controller: 'ShoppingCartCtrl'
+            }
+        }
+    })
+
     .state('app.shipping-address', {
         url: "/shipping-address",
         views: {
@@ -243,6 +253,9 @@ angular.module('your_app_name', [
 
 })
 
+<<<<<<< HEAD
+;
+=======
 ;
 
 
@@ -480,3 +493,4 @@ function oauthCallback(url) {
         OpenFB.oauthCallback(url);
     });
 }
+>>>>>>> 73565fac565165835b52d7688e34226820d0c3a4

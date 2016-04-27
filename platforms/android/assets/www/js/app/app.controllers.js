@@ -159,6 +159,8 @@ angular.module('your_app_name.app.controllers', [])
     $scope.page = 1;
     $scope.totalPages = 1;
     $scope.chat2 = "gdfgdfg";
+<<<<<<< HEAD
+=======
 
     $scope.loadFeed = function() {
 
@@ -172,6 +174,7 @@ angular.module('your_app_name.app.controllers', [])
             });
     }
 
+>>>>>>> 73565fac565165835b52d7688e34226820d0c3a4
     $scope.doRefresh = function() {
         PostService.getFeedHostpital(1)
             .then(function(data) {
@@ -181,6 +184,7 @@ angular.module('your_app_name.app.controllers', [])
                 $scope.$broadcast('scroll.refreshComplete');
             });
     };
+
 
     $scope.getNewData = function() {
         //do something to load your new data here

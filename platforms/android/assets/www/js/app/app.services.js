@@ -174,8 +174,115 @@ angular.module('your_app_name.app.services', [])
 
         //var items;
 
+<<<<<<< HEAD
+  this.getUserDetails = function(userId){
+    var dfd = $q.defer();
+
+    $http.get('database.json').success(function(database) {
+      //find the user
+      var user = _.find(database.users, function(user){ return user._id == userId; });
+      dfd.resolve(user);
+    });
+
+    return dfd.promise;
+  };
+
+  this.getPost = function(postId){
+    var dfd = $q.defer();
+    $http.get('database.json').success(function(database) {
+      var post = _.find(database.posts, function(posts){ return posts.id == postId; });
+      post.user = _.find(database.users, function(user){ return user._id == post.userId; });
+      for (var i =  post.feed_comment.length - 1; i >= 0; i--) {
+        post.feed_comment[i].user = _.find(database.users, function(user){ return user._id == post.feed_comment[i].userId; });
+      };
+      dfd.resolve(post);
+    });
+    return dfd.promise;
+  };
+
+  this.getUserPosts = function(userId){
+    var dfd = $q.defer();
+
+    $http.get('database.json').success(function(database) {
+
+      //get user posts
+      var userPosts =  _.filter(database.posts, function(post){ return post.userId == userId; });
+      //sort posts by published date
+      var sorted_posts = _.sortBy(userPosts, function(post){ return new Date(post.date); });
+
+      //find the user
+      var user = _.find(database.users, function(user){ return user._id == userId; });
+
+      //add user data to posts
+      var posts = _.each(sorted_posts.reverse(), function(post){
+        post.user = user;
+        return post;
+      });
+
+      dfd.resolve(posts);
+    });
+
+    return dfd.promise;
+  };
+
+  this.getUserLikes = function(userId){
+    var dfd = $q.defer();
+
+    $http.get('database.json').success(function(database) {
+      //get user likes
+      //we will get all the posts
+      var slicedLikes = database.posts.slice(0, 4);
+      // var sortedLikes =  _.sortBy(database.posts, function(post){ return new Date(post.date); });
+      var sortedLikes =  _.sortBy(slicedLikes, function(post){ return new Date(post.date); });
+
+      //add user data to posts
+      var likes = _.each(sortedLikes.reverse(), function(post){
+        post.user = _.find(database.users, function(user){ return user._id == post.userId; });
+        return post;
+      });
+
+      dfd.resolve(likes);
+
+    });
+
+    return dfd.promise;
+
+  };
+
+  this.getFeed = function(page){
+
+    var pageSize = 5, // set your page size, which is number of records per page
+        skip = pageSize * (page-1),
+        totalPosts = 1,
+        totalPages = 1,
+        dfd = $q.defer();
+
+    $http.get('database.json').success(function(database) {
+
+      totalPosts = database.posts.length;
+      totalPages = totalPosts/pageSize;
+
+      var sortedPosts =  _.sortBy(database.posts, function(post){ return new Date(post.date); }),
+          postsToShow = sortedPosts.slice(skip, skip + pageSize);
+
+      //add user data to posts
+      var posts = _.each(postsToShow.reverse(), function(post){
+        post.user = _.find(database.users, function(user){ return user._id == post.userId; });
+        return post;
+      });
+
+      dfd.resolve({
+        posts: posts,
+        totalPages: totalPages
+      });
+    });
+
+    return dfd.promise;
+  };
+=======
 
     };
+<<<<<<< HEAD
 
     this.sendLike = function(objID) {
         OpenFB.post('/' + objID + '/likes', { limit: 200 })
@@ -187,6 +294,9 @@ angular.module('your_app_name.app.services', [])
 
             });
     }
+=======
+>>>>>>> 73565fac565165835b52d7688e34226820d0c3a4
+>>>>>>> e4c0df28f53a2f38c8a568777cd96482c232ddc5
 })
 
 .service('ShopService', function($http, $q, _) {
