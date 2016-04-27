@@ -85,31 +85,32 @@ angular.module('your_app_name.app.controllers', [])
     }
 
     // show add to cart popup on button click
-    $scope.showAddToCartPopup = function(product) {
+    $scope.showAddToCartPopup = function(product,product_price) {
         $scope.data = {};
         $scope.data.product = product;
+        $scope.data.product_price = product_price;
         $scope.data.productOption = 1;
         $scope.data.productQuantity = 1;
 
         var myPopup = $ionicPopup.show({
             cssClass: 'add-to-cart-popup',
             templateUrl: 'views/app/shop/partials/add-to-cart-popup.html',
-            title: 'Add to Cart',
+            title: 'Confirm Order',
             scope: $scope,
             buttons: [
                 { text: '', type: 'close-popup ion-ios-close-outline' }, {
-                    text: 'Add to cart',
+                    text: 'Confirm',
                     onTap: function(e) {
                         return $scope.data;
                     }
                 }
             ]
-        });
+        })
         myPopup.then(function(res) {
             if (res) {
-                $ionicLoading.show({ template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Adding to cart</p>', duration: 1000 });
-                ShopService.addProductToCart(res.product);
-                console.log('Item added to cart!', res);
+                $ionicLoading.show({ template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Loading</p>', duration: 1000 });
+                ShopService.addProductToCart(res.product,res.product_price);
+                console.log('Item added to cart!', res,res.product_price);
             } else {
                 console.log('Popup closed');
             }

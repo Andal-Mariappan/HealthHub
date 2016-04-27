@@ -1,7 +1,33 @@
 <span class="popup-product-title">{{data.product.title}}</span>
-<span class="popup-product-price">${{data.product.price}}</span>
+<p class="popup-product-price">แพคเกจละ {{data.product_price.price}} บาท</p>
 <div class="separator-line"></div>
-<div class="row product-options">
+
+
+<div class="row">
+  <div class="col-25 text-right"><span class="popup-product-price">จำนวน</span></div>
+  <div class="col-25 text-center"><span class="popup-product-price">{{data.product_price.unit}}</span></div>
+  <div class="col-50 text-left"><span class="popup-product-price">แพคเกจ</span></div>
+</div>
+
+<div class="row">
+  <div class="col-25 text-right"><span class="popup-product-price">ส่วนลด</span></div>
+  <div class="col-25 text-center"><span class="popup-product-price">{{data.product_price.discount}}</span></div>
+  <div class="col-50 text-left"><span class="popup-product-price">%</span></div>
+</div>
+
+<div class="row">
+  <div class="col-25 text-right"><span class="popup-product-price">เหลือ</span></div>
+  <div class="col-25 text-center"><span class="popup-product-price">{{data.product_price.price_aft_discount}}</span></div>
+  <div class="col-50 text-left"><span class="popup-product-price">บาท/แพคเกจ</span></div>
+</div>
+
+
+<div class="row">
+  <div class="col-25 text-right"><span class="popup-product-price">รวม</span></div>
+  <div class="col-25 text-center"><span class="popup-product-price">{{data.product_price.amount}}</span></div>
+  <div class="col-50 text-left"><span class="popup-product-price">บาท</span></div>
+</div>
+<!-- <div class="row product-options">
   <div class="col col-75 select-option-wrapper">
     <select ng-model="data.productOption">
       <option value="1">Shiny Black Gold</option>
@@ -14,4 +40,4 @@
       <option ng-repeat="i in [1,2,3,4,5,6,7,8,9,10]" value="{{i}}">{{i}}</option>
     </select>
   </div>
-</div>
+</div> -->
