@@ -9,8 +9,8 @@
         <div ng-if="products.length > 0">
             <div class="products-list">
                 <div class="product-list-item" ng-repeat="product in products" ng-click="toggleGroup(product)">
-                    <div class="row product-content-wrapper">
-                        <div class="col">
+                    <div class="row product-content-wrapper" >
+                        <div class="col" >
                             <div class="product-picture">
                                 <pre-img ratio="_1_1" helper-class="main-image">
                                     <img ng-src="{{product.picture}}" spinner-on-load>
@@ -55,6 +55,7 @@
                         <p>Name : </p>
                         <p>Tel. : </p>
                     </ion-item>
+                <hr>
                 </div>
             </div>
     </ion-content>
