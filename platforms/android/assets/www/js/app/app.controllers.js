@@ -153,11 +153,27 @@ angular.module('your_app_name.app.controllers', [])
 })
 
 
-.controller('FeedCtrl', function($scope, PostService) {
+.controller('FeedCtrl', function($scope, PostService,OpenFB) {
     $scope.posts = [];
     $scope.page = 1;
     $scope.totalPages = 1;
     $scope.chat2 = "gdfgdfg";
+
+    $scope.loadFeed = function() {
+        var pageID = 256097964403278
+        OpenFB.get('/' + pageID + '/posts?fields=full_picture,message,updated_time,from,picture', { limit: 20 })
+            .success(function(result) {
+                $scope.items = result.data;;
+
+                // Used with pull-to-refresh
+                $scope.$broadcast('scroll.refreshComplete');
+            })
+            .error(function(data) {
+                $scope.hide();
+                alert(data.error.message);
+            });
+    }
+
     $scope.doRefresh = function() {
         PostService.getFeed(1)
             .then(function(data) {
@@ -167,7 +183,6 @@ angular.module('your_app_name.app.controllers', [])
                 $scope.$broadcast('scroll.refreshComplete');
             });
     };
-
 
     $scope.getNewData = function() {
         //do something to load your new data here
@@ -270,7 +285,19 @@ angular.module('your_app_name.app.controllers', [])
     //$scope.paymentDetails;
 })
 
-.controller('SettingsCtrl', function($scope, $ionicModal) {
+.controller('SettingsCtrl', function($scope, $ionicModal, OpenFB, $state) {
+
+    $scope.signOut = function() {
+
+        OpenFB.revokePermissions().then(
+            function() {
+                $state.go('facebook-sign-in');
+            },
+            function() {
+                alert('OpenFB : Revoke Permissions Failed!ppppp');
+            });
+
+    }
 
     $ionicModal.fromTemplateUrl('views/app/legal/terms-of-service.html', {
         scope: $scope,
