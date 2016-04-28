@@ -1,62 +1,69 @@
 <ion-view view-title="Shop Order" class="cart-view" cache-view="false">
-    <ion-content>
-        <div ng-if="products.length == 0">
-            <div class="empty-cart">
-                <i class="icon ion-ios-cart-outline"></i>
-                <h3 class="no-products">Your shopping cart is empty</h3>
+    <ion-content scroll="false">
+        <ion-scroll direction="y" style="height:100%;" overflow-scroll="false">
+            <div ng-if="products.length == 0">
+                <div class="empty-cart">
+                    <i class="icon ion-ios-cart-outline"></i>
+                    <h3 class="no-products">Your shopping cart is empty</h3>
+                </div>
             </div>
-        </div>
-        <div ng-if="products.length > 0">
-            <div class="products-list">
-                <div class="product-list-item" ng-repeat="product in products" ng-click="toggleGroup(product)">
-                    <div class="row product-content-wrapper" >
-                        <div class="col" >
-                            <div class="product-picture">
-                                <pre-img ratio="_1_1" helper-class="main-image">
-                                    <img ng-src="{{product.picture}}" spinner-on-load>
-                                </pre-img>
-                            </div>
-                            <div class="product-options-wrapper">
-                                <div class="row product-options">
-                                    <div class="col col-75 ">
-                                        <div class="row ">
-                                            <span class="product-title">{{product.title}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="col col-25">
-                                        <p style="text-align: center; margin-top: 9px;">1</p>
-                                    </div>
+            <div ng-if="products.length > 0">
+                <div style="margin-top:15px;">
+                    <div ng-repeat="product in products" ng-click="toggleGroup(product)" style="margin-top: -12px;">
+                        <a class="item item-thumbnail-left">
+                            <img ng-src="{{product.picture}}">
+                            <div class="row product-options">
+                                <div class="col col-75 ">
+                                    <span class="product-title item-text-wrap font-size-13">{{product.title}}</span>
                                 </div>
-                                <div class="row remove-product-wrapper">
-                                    <div class="col col-center col-75">
-                                        <!-- <span class="remove-product-button" ng-click="removeProductFromCart({{product}})">Remove</span> -->
-                                        <!-- <span class="remove-product-button" ng-click="removeProductFromCart(product)">Remove</span> -->
-                                        <button class="button button-clear button-small button-assertive remove-product-button" ng-click="detail(product)">
-                                            Datail
-                                        </button>
-                                    </div>
-                                    <div class="col col-center col-25">
-                                        <span class="product-price">Status {{product.price}}</span>
-                                    </div>
+                                <div class="col col-25 text-right">
+                                    <span class="product-title">{{product.price.unit}}</span>
+                                </div>
+                            </div>
+                            <hr class="item-cart-amount">
+                            <div class="row item-cart-amount">
+                                <div class="col col-center col-75" style="margin-left:-8px;">
+                                    <!-- <span class="remove-product-button" ng-click="removeProductFromCart({{product}})">Remove</span> -->
+                                    <!-- <span class="remove-product-button" ng-click="removeProductFromCart(product)">Remove</span> -->
+                                    <button class="button button-clear button-small button-balanced ">
+                                        <!--  ng-click="removeProductFromCart(product)" -->
+                                        ฿ {{product.price.amount}}
+                                    </button>
+                                </div>
+                                <div class="col col-center col-25">
+                                    <button class="button button-small button-energized ">
+                                        Waiting
+                                    </button>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="card" ng-repeat="range in range(product.price.unit)" ng-show="isGroupShown(product)" ui-sref="app.radio-buttom-cart({product_appointment : product._id})" style="margin-top: 1%;">
+                            <div class="row">
+                                <div class="col">
+                                    <p>No. : </p>
+                                </div>
+                                <div class="col">
+                                    <p>Date : </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p class="item-text-wrap">Package : {{product.title}}</p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p>Name : </p>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <p>Tel. : </p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <ion-item class="item-accordion" ng-show="isGroupShown(product)" ui-sref="app.radio-buttom-cart">
-                        <div class="row" style="margin-left: -10px;">
-                            <div class="col">
-                                <p>No. : </p>
-                            </div>
-                            <div class="col">
-                                <p>Date : </p>
-                            </div>
-                        </div>
-                        <p>Package : {{product.title}}</p>
-                        <p>Name : </p>
-                        <p>Tel. : </p>
-                    </ion-item>
-                <hr>
                 </div>
-            </div>
+        </ion-scroll>
     </ion-content>
 </ion-view>

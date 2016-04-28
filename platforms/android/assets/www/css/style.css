@@ -107,19 +107,31 @@ ul.rating li i {
     padding-left: 72px;
     min-height: 72px;
 }
-<<<<<<< HEAD
-.likes-facebook{
+
+.likes-facebook {
     color: #FF33FF;
 }
-.unlikes-facebook{
+
+.unlikes-facebook {
     color: #666666;
 }
-=======
-.button-orang-appointment{
-    width:100% ;
-    background-color:#FF9D4C;
-     border:none;
-    color:#ffffff; 
+
+.button-orang-appointment {
+    width: 100%;
+    background-color: #FF9D4C;
+    border: none;
+    color: #ffffff;
 }
 
->>>>>>> e4c0df28f53a2f38c8a568777cd96482c232ddc5
+.empty-feed {
+    font-size: 100px;
+}
+
+.item-cart-amount {
+    border-style: ridge;
+    margin-top: -10px;
+}
+
+.font-size-13 {
+    font-size: 13px;
+}

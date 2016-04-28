@@ -163,7 +163,7 @@ angular.module('your_app_name', [
     })
 
     .state('app.radio-buttom-cart', {
-        url: "/radio-buttom-cart",
+        url: "/radio-buttom-cart/:product_appointment",
         views: {
             'menuContent': {
                 templateUrl: "views/app/shop/radio-buttom-cart.html",

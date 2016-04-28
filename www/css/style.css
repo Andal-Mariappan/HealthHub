@@ -122,3 +122,16 @@ ul.rating li i {
     border: none;
     color: #ffffff;
 }
+
+.empty-feed {
+    font-size: 100px;
+}
+
+.item-cart-amount {
+    border-style: ridge;
+    margin-top: -10px;
+}
+
+.font-size-13 {
+    font-size: 13px;
+}

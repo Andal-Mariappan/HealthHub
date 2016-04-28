@@ -17,7 +17,7 @@
                     <img ng-src="{{post.full_picture}}" spinner-on-load>
                 </pre-img>
             </div>
-            <div class="row text-center" >
+            <div class="row text-center">
                 <div class="col col-50">
                     <span ui-sref="app.postCardDetail({postId: post.id})" class="subdued ">Like {{post.likes.length}}</span>
                 </div>
@@ -26,5 +26,10 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div ng-if="posts.length == 0">
+    <div class="text-center empty-feed">
+        <ion-spinner icon="ios"></ion-spinner>
     </div>
 </div>

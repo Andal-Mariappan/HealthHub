@@ -115,8 +115,9 @@ angular.module('your_app_name.app.controllers', [])
         myPopup.then(function(res) {
             if (res) {
                 $ionicLoading.show({ template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Loading</p>', duration: 1000 });
-                ShopService.addProductToCart(res.product, res.product_price);
-                console.log('Item added to cart!', res, res.product_price);
+                res.product.price = res.product_price;
+                ShopService.addProductToCart(res.product);
+                console.log('Item added to cart!', res);
             } else {
                 console.log('Popup closed');
             }
@@ -148,11 +149,11 @@ angular.module('your_app_name.app.controllers', [])
         });
         myPopup.then(function(res) {
             if (res) {
-                $ionicLoading.show({ template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Sending</p>', duration: 1000 });
-                ShopService.addProductToCart(res.product);
-                console.log('Item added to cart!', res);
+                // $ionicLoading.show({ template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Sending</p>', duration: 1000 });
+                // ShopService.addProductToCart(res.product);
+                // console.log('Item added to cart!', res);
             } else {
-                console.log('Popup closed');
+                // console.log('Popup closed');
             }
         });
     };
@@ -201,6 +202,10 @@ angular.module('your_app_name.app.controllers', [])
 
         PostService.sendLike(obj.id);
         $scope._likes = obj.id;
+        PostService.getUserLikes(obj.id)
+            .then(function(data) {
+                obj.likes = data;
+            });
         //$scope.doRefresh();
     }
 
@@ -262,8 +267,12 @@ angular.module('your_app_name.app.controllers', [])
 })
 
 
-.controller('ShoppingCartCtrl', function($scope, ShopService, $ionicActionSheet, _) {
+.controller('ShoppingCartCtrl', function($scope, ShopService, $stateParams, $ionicActionSheet, _) {
     $scope.products = ShopService.getCartProducts();
+    $scope.product_appointment = ShopService.getProductsAppointMent($stateParams.product_appointment).then(function(product) {
+        $scope.product = product;
+    });
+
 
     $scope.removeProductFromCart = function(product) {
         $ionicActionSheet.show({
@@ -293,6 +302,16 @@ angular.module('your_app_name.app.controllers', [])
             $scope.shownGroup = group;
         }
     };
+    $scope.range = function(count) {
+
+        var ratings = [];
+
+        for (var i = 0; i < count; i++) {
+            ratings.push(i)
+        }
+
+        return ratings;
+    }
     $scope.isGroupShown = function(group) {
         return $scope.shownGroup === group;
     };
